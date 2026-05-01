@@ -1,0 +1,10 @@
+data/
+data/15dB_npy/
+data/preprocessed/
+.venv/
+data2/
+data2/15dB_npy/
+data3/
+data3/15dB/
+data3.zip
+data2.zip
