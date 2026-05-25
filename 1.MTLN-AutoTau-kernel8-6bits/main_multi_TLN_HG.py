@@ -42,6 +42,9 @@ import argparse
 import random
 import subprocess
 import time
+import os
+
+from huggingface_hub import snapshot_download
 
 import numpy as np
 from sympy import stats
@@ -173,29 +176,6 @@ def print_memory():
     mem = process.memory_info().rss / (1024 ** 3)
     print(f"Memory Usage: {mem:.2f} GB")
 
-def _find_data3_root():
-    script_dir = os.path.dirname(__file__)
-    candidates = [
-        os.path.join(script_dir, '..', 'data3'),
-        os.path.join(script_dir, '..', '..', 'data3'),
-        os.path.join(os.getcwd(), 'data3'),
-        os.path.join(os.getcwd(), '..', 'data3'),
-    ]
-
-    checked = []
-    for candidate in candidates:
-        data_root = os.path.abspath(candidate)
-        if data_root in checked:
-            continue
-        checked.append(data_root)
-        if os.path.isdir(os.path.join(data_root, '15dB')):
-            return data_root
-
-    raise RuntimeError(
-        "Could not find OFDM data3/15dB directory. Checked: "
-        + ", ".join(checked)
-    )
-
 
 def load_dataset(args):
     num_bits = args.num_bits
@@ -206,11 +186,26 @@ def load_dataset(args):
         raise NotImplementedError(f'The data set {args.dataset} is not supported! Please use ofdm.')
 
     class_names = ['BPSK', 'QPSK', 'QAM16', 'QAM64', 'QAM256', 'QAM1024']
-    data3_root = _find_data3_root()
-    npy_dir = os.path.join(data3_root, '15dB')
+    
+    # Path to wireless data directory
+    npy_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'wireless_data'))
+
+    # Check if data exists, if not, attempt to download it automatically.
+    if not os.path.isdir(npy_dir) or not any(os.path.isdir(os.path.join(npy_dir, c)) for c in class_names):
+        print(f"Data not found at {npy_dir}. Attempting to download from Hugging Face...")
+        hf_token = os.getenv('HF_TOKEN')
+        try:
+            snapshot_download(
+                repo_id='Sam10Man/Wireless',
+                repo_type="dataset",
+                local_dir=npy_dir,
+                token=hf_token
+            )
+        except Exception as e:
+             raise RuntimeError(f"Could not find or download data at {npy_dir}. Error: {e}")
 
     requested_cache_dir = os.path.abspath(args.preprocessed_cache_dir)
-    # If the user didn't override the default, we might want to point it to data3/preprocessed
+    # If the user didn't override the default, we might want to point it to wireless_data/preprocessed
     # But let's stay consistent with the provided arguments and cache logic.
     
     num_bits = args.num_bits
@@ -973,7 +968,6 @@ if __name__ == '__main__':
         default=os.path.join(os.path.dirname(__file__), './../'),
         help='directory used to store and reuse cached binarized datasets',
     )
-
 
     args = parser.parse_args()
     if args.num_bits < 1:
