@@ -1,0 +1,965 @@
+Epoch 1 finished: total_loss=10485.747705, total_correct=4006
+Epoch 2 finished: total_loss=5342.057432, total_correct=5574
+Epoch 3 finished: total_loss=5246.157552, total_correct=5553
+Epoch 4 finished: total_loss=5343.599632, total_correct=5605
+Epoch 5 finished: total_loss=5098.955343, total_correct=5658
+Epoch 6 finished: total_loss=5038.435428, total_correct=5637
+Epoch 7 finished: total_loss=4906.547459, total_correct=5776
+Epoch 8 finished: total_loss=4905.919043, total_correct=5785
+Epoch 9 finished: total_loss=4837.729176, total_correct=5789
+Epoch 10 finished: total_loss=4842.684854, total_correct=5817
+Epoch 11 finished: total_loss=4861.239158, total_correct=5811
+Epoch 12 finished: total_loss=4963.455612, total_correct=5733
+Epoch 13 finished: total_loss=4749.370516, total_correct=5890
+Epoch 14 finished: total_loss=4708.754017, total_correct=5962
+Epoch 15 finished: total_loss=4650.906855, total_correct=5990
+Epoch 16 finished: total_loss=4722.509216, total_correct=5949
+Epoch 17 finished: total_loss=4622.581328, total_correct=6002
+Epoch 18 finished: total_loss=4582.653811, total_correct=5970
+Epoch 19 finished: total_loss=4718.983262, total_correct=5970
+Epoch 20 finished: total_loss=4696.527699, total_correct=6030
+Epoch 21 finished: total_loss=4607.342845, total_correct=6050
+Epoch 22 finished: total_loss=4598.835195, total_correct=6077
+Epoch 23 finished: total_loss=4629.866903, total_correct=6127
+Epoch 24 finished: total_loss=4518.237947, total_correct=6154
+Epoch 25 finished: total_loss=4609.117611, total_correct=6212
+Epoch 26 finished: total_loss=4795.450806, total_correct=6108
+Epoch 27 finished: total_loss=4687.632152, total_correct=6201
+Epoch 28 finished: total_loss=4522.018012, total_correct=6270
+Epoch 29 finished: total_loss=4479.795526, total_correct=6312
+Epoch 30 finished: total_loss=4632.163918, total_correct=6140
+Epoch 31 finished: total_loss=4724.419132, total_correct=6191
+Epoch 32 finished: total_loss=4128.894380, total_correct=6608
+Epoch 33 finished: total_loss=4049.135493, total_correct=6702
+Epoch 34 finished: total_loss=4030.309611, total_correct=6718
+Epoch 35 finished: total_loss=4010.061174, total_correct=6745
+Epoch 36 finished: total_loss=4004.759251, total_correct=6720
+Epoch 37 finished: total_loss=4008.146004, total_correct=6711
+Epoch 38 finished: total_loss=3983.571511, total_correct=6646
+Epoch 39 finished: total_loss=3953.984755, total_correct=6711
+Epoch 40 finished: total_loss=3967.044771, total_correct=6648
+Epoch 41 finished: total_loss=3955.150274, total_correct=6633
+Epoch 42 finished: total_loss=3958.884291, total_correct=6660
+Epoch 43 finished: total_loss=3938.667138, total_correct=6698
+Epoch 44 finished: total_loss=3934.654389, total_correct=6698
+Epoch 45 finished: total_loss=3928.279189, total_correct=6735
+Epoch 46 finished: total_loss=3930.017374, total_correct=6690
+Epoch 47 finished: total_loss=3984.649306, total_correct=6606
+Epoch 48 finished: total_loss=3969.082014, total_correct=6617
+Epoch 49 finished: total_loss=3980.516267, total_correct=6597
+Epoch 50 finished: total_loss=3985.876401, total_correct=6630
+[Epoch 1] batch 1/787 loss=1.831962 acc=0.1562 samples/s=1.32
+[Epoch 1] batch 2/787 loss=1.859735 acc=0.1250 samples/s=1.33
+[Epoch 1] batch 3/787 loss=1.817647 acc=0.1875 samples/s=1.33
+[Epoch 1] batch 4/787 loss=1.852286 acc=0.1797 samples/s=1.34
+[Epoch 1] batch 5/787 loss=1.828478 acc=0.2000 samples/s=1.34
+[Epoch 1] batch 6/787 loss=1.833423 acc=0.1979 samples/s=1.35
+[Epoch 1] batch 7/787 loss=1.832541 acc=0.1964 samples/s=1.35
+[Epoch 1] batch 8/787 loss=1.840423 acc=0.1875 samples/s=1.35
+[Epoch 1] batch 9/787 loss=1.852015 acc=0.1771 samples/s=1.36
+[Epoch 1] batch 10/787 loss=1.847831 acc=0.1781 samples/s=1.36
+[Epoch 1] batch 11/787 loss=1.849177 acc=0.1761 samples/s=1.36
+[Epoch 1] batch 12/787 loss=1.846348 acc=0.1745 samples/s=1.36
+[Epoch 1] batch 13/787 loss=1.842808 acc=0.1827 samples/s=1.36
+[Epoch 1] batch 14/787 loss=1.836020 acc=0.1808 samples/s=1.36
+[Epoch 1] batch 15/787 loss=1.828603 acc=0.1792 samples/s=1.36
+[Epoch 1] batch 16/787 loss=1.833651 acc=0.1797 samples/s=1.36
+[Epoch 1] batch 17/787 loss=1.842887 acc=0.1783 samples/s=1.36
+[Epoch 1] batch 18/787 loss=1.846439 acc=0.1788 samples/s=1.36
+[Epoch 1] batch 19/787 loss=1.843212 acc=0.1826 samples/s=1.37
+[Epoch 1] batch 20/787 loss=1.845103 acc=0.1781 samples/s=1.37
+[Epoch 1] batch 21/787 loss=1.845154 acc=0.1771 samples/s=1.37
+[Epoch 1] batch 22/787 loss=1.845334 acc=0.1747 samples/s=1.37
+[Epoch 1] batch 23/787 loss=1.842559 acc=0.1780 samples/s=1.37
+[Epoch 1] batch 24/787 loss=1.845145 acc=0.1719 samples/s=1.37
+[Epoch 1] batch 25/787 loss=1.848321 acc=0.1688 samples/s=1.37
+[Epoch 1] batch 26/787 loss=1.845085 acc=0.1683 samples/s=1.37
+[Epoch 1] batch 27/787 loss=1.845596 acc=0.1701 samples/s=1.37
+[Epoch 1] batch 28/787 loss=1.845673 acc=0.1685 samples/s=1.37
+[Epoch 1] batch 29/787 loss=1.845477 acc=0.1670 samples/s=1.37
+[Epoch 1] batch 30/787 loss=1.843495 acc=0.1719 samples/s=1.36
+[Epoch 1] batch 31/787 loss=1.844068 acc=0.1694 samples/s=1.36
+[Epoch 1] batch 32/787 loss=1.844897 acc=0.1709 samples/s=1.36
+[Epoch 1] batch 33/787 loss=1.850908 acc=0.1676 samples/s=1.36
+[Epoch 1] batch 34/787 loss=1.849933 acc=0.1664 samples/s=1.36
+[Epoch 1] batch 35/787 loss=1.849961 acc=0.1652 samples/s=1.36
+[Epoch 1] batch 36/787 loss=1.851435 acc=0.1632 samples/s=1.36
+[Epoch 1] batch 37/787 loss=1.850192 acc=0.1630 samples/s=1.36
+[Epoch 1] batch 38/787 loss=1.848567 acc=0.1645 samples/s=1.36
+[Epoch 1] batch 39/787 loss=1.847887 acc=0.1659 samples/s=1.36
+[Epoch 1] batch 40/787 loss=1.847626 acc=0.1656 samples/s=1.36
+[Epoch 1] batch 41/787 loss=1.845270 acc=0.1654 samples/s=1.36
+[Epoch 1] batch 42/787 loss=1.841982 acc=0.1682 samples/s=1.36
+[Epoch 1] batch 43/787 loss=1.839357 acc=0.1693 samples/s=1.36
+[Epoch 1] batch 44/787 loss=1.838519 acc=0.1690 samples/s=1.36
+[Epoch 1] batch 45/787 loss=1.836539 acc=0.1674 samples/s=1.36
+[Epoch 1] batch 46/787 loss=1.834546 acc=0.1678 samples/s=1.36
+[Epoch 1] batch 47/787 loss=1.831092 acc=0.1695 samples/s=1.36
+[Epoch 1] batch 48/787 loss=1.826945 acc=0.1751 samples/s=1.36
+[Epoch 1] batch 49/787 loss=1.824790 acc=0.1805 samples/s=1.36
+[Epoch 1] batch 50/787 loss=1.822620 acc=0.1806 samples/s=1.36
+[Epoch 1] batch 51/787 loss=1.820963 acc=0.1820 samples/s=1.36
+[Epoch 1] batch 52/787 loss=1.819710 acc=0.1851 samples/s=1.36
+[Epoch 1] batch 53/787 loss=1.816257 acc=0.1869 samples/s=1.36
+[Epoch 1] batch 54/787 loss=1.812560 acc=0.1881 samples/s=1.36
+[Epoch 1] batch 55/787 loss=1.808877 acc=0.1898 samples/s=1.36
+[Epoch 1] batch 56/787 loss=1.805273 acc=0.1908 samples/s=1.36
+[Epoch 1] batch 57/787 loss=1.801312 acc=0.1924 samples/s=1.36
+[Epoch 1] batch 58/787 loss=1.797317 acc=0.1956 samples/s=1.36
+[Epoch 1] batch 59/787 loss=1.791568 acc=0.1976 samples/s=1.36
+[Epoch 1] batch 60/787 loss=1.787429 acc=0.2005 samples/s=1.36
+[Epoch 1] batch 61/787 loss=1.785094 acc=0.2024 samples/s=1.36
+[Epoch 1] batch 62/787 loss=1.782191 acc=0.2061 samples/s=1.36
+[Epoch 1] batch 63/787 loss=1.777140 acc=0.2073 samples/s=1.36
+[Epoch 1] batch 64/787 loss=1.771686 acc=0.2129 samples/s=1.36
+[Epoch 1] batch 65/787 loss=1.766101 acc=0.2163 samples/s=1.36
+[Epoch 1] batch 66/787 loss=1.759283 acc=0.2230 samples/s=1.36
+[Epoch 1] batch 67/787 loss=1.754762 acc=0.2262 samples/s=1.36
+[Epoch 1] batch 68/787 loss=1.753914 acc=0.2275 samples/s=1.36
+[Epoch 1] batch 69/787 loss=1.750325 acc=0.2260 samples/s=1.36
+[Epoch 1] batch 70/787 loss=1.746296 acc=0.2286 samples/s=1.36
+[Epoch 1] batch 71/787 loss=1.741586 acc=0.2302 samples/s=1.36
+[Epoch 1] batch 72/787 loss=1.737170 acc=0.2309 samples/s=1.35
+[Epoch 1] batch 73/787 loss=1.731125 acc=0.2350 samples/s=1.35
+[Epoch 1] batch 74/787 loss=1.726782 acc=0.2361 samples/s=1.35
+[Epoch 1] batch 75/787 loss=1.722647 acc=0.2375 samples/s=1.36
+[Epoch 1] batch 76/787 loss=1.717365 acc=0.2401 samples/s=1.36
+[Epoch 1] batch 77/787 loss=1.714307 acc=0.2390 samples/s=1.36
+[Epoch 1] batch 78/787 loss=1.710969 acc=0.2400 samples/s=1.36
+[Epoch 1] batch 79/787 loss=1.704967 acc=0.2437 samples/s=1.36
+[Epoch 1] batch 80/787 loss=1.700952 acc=0.2449 samples/s=1.36
+[Epoch 1] batch 81/787 loss=1.697235 acc=0.2461 samples/s=1.36
+[Epoch 1] batch 82/787 loss=1.694342 acc=0.2466 samples/s=1.36
+[Epoch 1] batch 83/787 loss=1.691437 acc=0.2466 samples/s=1.36
+[Epoch 1] batch 84/787 loss=1.686389 acc=0.2478 samples/s=1.36
+[Epoch 1] batch 85/787 loss=1.681459 acc=0.2485 samples/s=1.36
+[Epoch 1] batch 86/787 loss=1.677050 acc=0.2482 samples/s=1.36
+[Epoch 1] batch 87/787 loss=1.672810 acc=0.2493 samples/s=1.36
+[Epoch 1] batch 88/787 loss=1.669173 acc=0.2514 samples/s=1.36
+[Epoch 1] batch 89/787 loss=1.664015 acc=0.2539 samples/s=1.36
+[Epoch 1] batch 90/787 loss=1.658928 acc=0.2559 samples/s=1.36
+[Epoch 1] batch 91/787 loss=1.655323 acc=0.2562 samples/s=1.36
+[Epoch 1] batch 92/787 loss=1.650988 acc=0.2568 samples/s=1.36
+[Epoch 1] batch 93/787 loss=1.646937 acc=0.2594 samples/s=1.36
+[Epoch 1] batch 94/787 loss=1.641197 acc=0.2603 samples/s=1.36
+[Epoch 1] batch 95/787 loss=1.637827 acc=0.2622 samples/s=1.36
+[Epoch 1] batch 96/787 loss=1.634854 acc=0.2637 samples/s=1.36
+[Epoch 1] batch 97/787 loss=1.632972 acc=0.2642 samples/s=1.36
+[Epoch 1] batch 98/787 loss=1.630307 acc=0.2647 samples/s=1.36
+[Epoch 1] batch 99/787 loss=1.626402 acc=0.2645 samples/s=1.36
+[Epoch 1] batch 100/787 loss=1.622914 acc=0.2669 samples/s=1.36
+[Epoch 1] batch 101/787 loss=1.619334 acc=0.2679 samples/s=1.36
+[Epoch 1] batch 102/787 loss=1.619080 acc=0.2678 samples/s=1.36
+[Epoch 1] batch 103/787 loss=1.616271 acc=0.2676 samples/s=1.36
+[Epoch 1] batch 104/787 loss=1.612947 acc=0.2677 samples/s=1.36
+[Epoch 1] batch 105/787 loss=1.608820 acc=0.2702 samples/s=1.36
+[Epoch 1] batch 106/787 loss=1.606150 acc=0.2718 samples/s=1.36
+[Epoch 1] batch 107/787 loss=1.602514 acc=0.2725 samples/s=1.36
+[Epoch 1] batch 108/787 loss=1.600011 acc=0.2723 samples/s=1.36
+[Epoch 1] batch 109/787 loss=1.597500 acc=0.2718 samples/s=1.36
+[Epoch 1] batch 110/787 loss=1.593185 acc=0.2747 samples/s=1.36
+[Epoch 1] batch 111/787 loss=1.589838 acc=0.2762 samples/s=1.36
+[Epoch 1] batch 112/787 loss=1.584930 acc=0.2771 samples/s=1.35
+[Epoch 1] batch 113/787 loss=1.581329 acc=0.2793 samples/s=1.36
+[Epoch 1] batch 114/787 loss=1.577305 acc=0.2815 samples/s=1.36
+[Epoch 1] batch 115/787 loss=1.574120 acc=0.2823 samples/s=1.35
+[Epoch 1] batch 116/787 loss=1.572473 acc=0.2823 samples/s=1.35
+[Epoch 1] batch 117/787 loss=1.568919 acc=0.2842 samples/s=1.35
+[Epoch 1] batch 118/787 loss=1.564434 acc=0.2871 samples/s=1.36
+[Epoch 1] batch 119/787 loss=1.561005 acc=0.2889 samples/s=1.36
+[Epoch 1] batch 120/787 loss=1.558336 acc=0.2901 samples/s=1.35
+[Epoch 1] batch 121/787 loss=1.554382 acc=0.2924 samples/s=1.35
+[Epoch 1] batch 122/787 loss=1.552062 acc=0.2928 samples/s=1.35
+[Epoch 1] batch 123/787 loss=1.548387 acc=0.2955 samples/s=1.35
+[Epoch 1] batch 124/787 loss=1.543647 acc=0.2984 samples/s=1.35
+[Epoch 1] batch 125/787 loss=1.540093 acc=0.3010 samples/s=1.35
+[Epoch 1] batch 126/787 loss=1.536818 acc=0.3023 samples/s=1.35
+[Epoch 1] batch 127/787 loss=1.532993 acc=0.3036 samples/s=1.35
+[Epoch 1] batch 128/787 loss=1.529239 acc=0.3044 samples/s=1.35
+[Epoch 1] batch 129/787 loss=1.526311 acc=0.3052 samples/s=1.35
+[Epoch 1] batch 130/787 loss=1.522801 acc=0.3072 samples/s=1.35
+[Epoch 1] batch 131/787 loss=1.519853 acc=0.3089 samples/s=1.35
+[Epoch 1] batch 132/787 loss=1.516397 acc=0.3108 samples/s=1.35
+[Epoch 1] batch 133/787 loss=1.513071 acc=0.3125 samples/s=1.35
+[Epoch 1] batch 134/787 loss=1.509271 acc=0.3144 samples/s=1.35
+[Epoch 1] batch 135/787 loss=1.507379 acc=0.3150 samples/s=1.35
+[Epoch 1] batch 136/787 loss=1.503784 acc=0.3169 samples/s=1.35
+[Epoch 1] batch 137/787 loss=1.498822 acc=0.3196 samples/s=1.35
+[Epoch 1] batch 138/787 loss=1.496819 acc=0.3207 samples/s=1.35
+[Epoch 1] batch 139/787 loss=1.494078 acc=0.3217 samples/s=1.35
+[Epoch 1] batch 140/787 loss=1.492292 acc=0.3221 samples/s=1.35
+[Epoch 1] batch 141/787 loss=1.490427 acc=0.3227 samples/s=1.35
+[Epoch 1] batch 142/787 loss=1.487690 acc=0.3246 samples/s=1.35
+[Epoch 1] batch 143/787 loss=1.485365 acc=0.3254 samples/s=1.35
+[Epoch 1] batch 144/787 loss=1.482016 acc=0.3260 samples/s=1.35
+[Epoch 1] batch 145/787 loss=1.479016 acc=0.3274 samples/s=1.35
+[Epoch 1] batch 146/787 loss=1.476587 acc=0.3279 samples/s=1.35
+[Epoch 1] batch 147/787 loss=1.472850 acc=0.3287 samples/s=1.35
+[Epoch 1] batch 148/787 loss=1.468956 acc=0.3311 samples/s=1.35
+[Epoch 1] batch 149/787 loss=1.465442 acc=0.3324 samples/s=1.35
+[Epoch 1] batch 150/787 loss=1.463077 acc=0.3325 samples/s=1.35
+[Epoch 1] batch 151/787 loss=1.459925 acc=0.3344 samples/s=1.35
+[Epoch 1] batch 152/787 loss=1.456207 acc=0.3357 samples/s=1.35
+[Epoch 1] batch 153/787 loss=1.452983 acc=0.3370 samples/s=1.35
+[Epoch 1] batch 154/787 loss=1.451206 acc=0.3377 samples/s=1.35
+[Epoch 1] batch 155/787 loss=1.449084 acc=0.3387 samples/s=1.35
+[Epoch 1] batch 156/787 loss=1.446625 acc=0.3391 samples/s=1.35
+[Epoch 1] batch 157/787 loss=1.444225 acc=0.3400 samples/s=1.35
+[Epoch 1] batch 158/787 loss=1.443008 acc=0.3404 samples/s=1.35
+[Epoch 1] batch 159/787 loss=1.440796 acc=0.3412 samples/s=1.35
+[Epoch 1] batch 160/787 loss=1.437333 acc=0.3432 samples/s=1.35
+[Epoch 1] batch 161/787 loss=1.435896 acc=0.3432 samples/s=1.35
+[Epoch 1] batch 162/787 loss=1.433425 acc=0.3436 samples/s=1.35
+[Epoch 1] batch 163/787 loss=1.430403 acc=0.3443 samples/s=1.35
+[Epoch 1] batch 164/787 loss=1.426135 acc=0.3470 samples/s=1.35
+[Epoch 1] batch 165/787 loss=1.423071 acc=0.3483 samples/s=1.35
+[Epoch 1] batch 166/787 loss=1.419416 acc=0.3500 samples/s=1.35
+[Epoch 1] batch 167/787 loss=1.415721 acc=0.3522 samples/s=1.35
+[Epoch 1] batch 168/787 loss=1.412627 acc=0.3534 samples/s=1.35
+[Epoch 1] batch 169/787 loss=1.409407 acc=0.3554 samples/s=1.35
+[Epoch 1] batch 170/787 loss=1.405326 acc=0.3570 samples/s=1.35
+[Epoch 1] batch 171/787 loss=1.402695 acc=0.3578 samples/s=1.35
+[Epoch 1] batch 172/787 loss=1.400520 acc=0.3590 samples/s=1.35
+[Epoch 1] batch 173/787 loss=1.398043 acc=0.3600 samples/s=1.35
+[Epoch 1] batch 174/787 loss=1.395577 acc=0.3605 samples/s=1.36
+[Epoch 1] batch 175/787 loss=1.393584 acc=0.3613 samples/s=1.36
+[Epoch 1] batch 176/787 loss=1.392791 acc=0.3608 samples/s=1.36
+[Epoch 1] batch 177/787 loss=1.390124 acc=0.3614 samples/s=1.36
+[Epoch 1] batch 178/787 loss=1.387152 acc=0.3636 samples/s=1.36
+[Epoch 1] batch 179/787 loss=1.385523 acc=0.3638 samples/s=1.36
+[Epoch 1] batch 180/787 loss=1.383331 acc=0.3649 samples/s=1.36
+[Epoch 1] batch 181/787 loss=1.380788 acc=0.3662 samples/s=1.36
+[Epoch 1] batch 182/787 loss=1.378342 acc=0.3680 samples/s=1.36
+[Epoch 1] batch 183/787 loss=1.375638 acc=0.3700 samples/s=1.36
+[Epoch 1] batch 184/787 loss=1.373436 acc=0.3714 samples/s=1.36
+[Epoch 1] batch 185/787 loss=1.369732 acc=0.3730 samples/s=1.36
+[Epoch 1] batch 186/787 loss=1.367666 acc=0.3735 samples/s=1.36
+[Epoch 1] batch 187/787 loss=1.364778 acc=0.3755 samples/s=1.36
+[Epoch 1] batch 188/787 loss=1.362358 acc=0.3763 samples/s=1.36
+[Epoch 1] batch 189/787 loss=1.360002 acc=0.3778 samples/s=1.36
+[Epoch 1] batch 190/787 loss=1.357176 acc=0.3789 samples/s=1.36
+[Epoch 1] batch 191/787 loss=1.355332 acc=0.3801 samples/s=1.36
+[Epoch 1] batch 192/787 loss=1.351801 acc=0.3820 samples/s=1.36
+[Epoch 1] batch 193/787 loss=1.349715 acc=0.3821 samples/s=1.36
+[Epoch 1] batch 194/787 loss=1.346264 acc=0.3835 samples/s=1.36
+[Epoch 1] batch 195/787 loss=1.342872 acc=0.3849 samples/s=1.36
+[Epoch 1] batch 196/787 loss=1.340905 acc=0.3863 samples/s=1.36
+[Epoch 1] batch 197/787 loss=1.337916 acc=0.3874 samples/s=1.36
+[Epoch 1] batch 198/787 loss=1.335372 acc=0.3883 samples/s=1.36
+[Epoch 1] batch 199/787 loss=1.331908 acc=0.3902 samples/s=1.36
+[Epoch 1] batch 200/787 loss=1.328520 acc=0.3916 samples/s=1.36
+[Epoch 1] batch 201/787 loss=1.325631 acc=0.3930 samples/s=1.36
+[Epoch 1] batch 202/787 loss=1.323548 acc=0.3933 samples/s=1.36
+[Epoch 1] batch 203/787 loss=1.321420 acc=0.3941 samples/s=1.36
+[Epoch 1] batch 204/787 loss=1.320367 acc=0.3937 samples/s=1.36
+[Epoch 1] batch 205/787 loss=1.317783 acc=0.3948 samples/s=1.36
+[Epoch 1] batch 206/787 loss=1.315806 acc=0.3953 samples/s=1.36
+[Epoch 1] batch 207/787 loss=1.313707 acc=0.3958 samples/s=1.36
+[Epoch 1] batch 208/787 loss=1.312471 acc=0.3956 samples/s=1.36
+[Epoch 1] batch 209/787 loss=1.310079 acc=0.3973 samples/s=1.36
+[Epoch 1] batch 210/787 loss=1.308271 acc=0.3976 samples/s=1.36
+[Epoch 1] batch 211/787 loss=1.305438 acc=0.3985 samples/s=1.36
+[Epoch 1] batch 212/787 loss=1.304304 acc=0.3990 samples/s=1.36
+[Epoch 1] batch 213/787 loss=1.302669 acc=0.3995 samples/s=1.36
+[Epoch 1] batch 214/787 loss=1.300793 acc=0.4004 samples/s=1.36
+[Epoch 1] batch 215/787 loss=1.300482 acc=0.4003 samples/s=1.36
+[Epoch 1] batch 216/787 loss=1.298598 acc=0.4010 samples/s=1.36
+[Epoch 1] batch 217/787 loss=1.296729 acc=0.4015 samples/s=1.36
+[Epoch 1] batch 218/787 loss=1.294397 acc=0.4024 samples/s=1.36
+[Epoch 1] batch 219/787 loss=1.293039 acc=0.4038 samples/s=1.36
+[Epoch 1] batch 220/787 loss=1.291269 acc=0.4051 samples/s=1.36
+[Epoch 1] batch 221/787 loss=1.289244 acc=0.4064 samples/s=1.35
+[Epoch 1] batch 222/787 loss=1.287561 acc=0.4074 samples/s=1.35
+[Epoch 1] batch 223/787 loss=1.286144 acc=0.4084 samples/s=1.35
+[Epoch 1] batch 224/787 loss=1.284722 acc=0.4088 samples/s=1.35
+[Epoch 1] batch 225/787 loss=1.282036 acc=0.4100 samples/s=1.35
+[Epoch 1] batch 226/787 loss=1.280306 acc=0.4108 samples/s=1.35
+[Epoch 1] batch 227/787 loss=1.278896 acc=0.4116 samples/s=1.35
+[Epoch 1] batch 228/787 loss=1.275832 acc=0.4131 samples/s=1.35
+[Epoch 1] batch 229/787 loss=1.275140 acc=0.4132 samples/s=1.35
+[Epoch 1] batch 230/787 loss=1.272773 acc=0.4148 samples/s=1.35
+[Epoch 1] batch 231/787 loss=1.271398 acc=0.4152 samples/s=1.35
+[Epoch 1] batch 232/787 loss=1.269884 acc=0.4157 samples/s=1.35
+[Epoch 1] batch 233/787 loss=1.269132 acc=0.4154 samples/s=1.35
+[Epoch 1] batch 234/787 loss=1.267019 acc=0.4164 samples/s=1.35
+[Epoch 1] batch 235/787 loss=1.265247 acc=0.4174 samples/s=1.35
+[Epoch 1] batch 236/787 loss=1.263172 acc=0.4188 samples/s=1.35
+[Epoch 1] batch 237/787 loss=1.261416 acc=0.4198 samples/s=1.35
+[Epoch 1] batch 238/787 loss=1.259830 acc=0.4207 samples/s=1.35
+[Epoch 1] batch 239/787 loss=1.258245 acc=0.4209 samples/s=1.35
+[Epoch 1] batch 240/787 loss=1.257061 acc=0.4219 samples/s=1.35
+[Epoch 1] batch 241/787 loss=1.255859 acc=0.4223 samples/s=1.35
+[Epoch 1] batch 242/787 loss=1.254802 acc=0.4224 samples/s=1.35
+[Epoch 1] batch 243/787 loss=1.253669 acc=0.4227 samples/s=1.35
+[Epoch 1] batch 244/787 loss=1.251615 acc=0.4237 samples/s=1.35
+[Epoch 1] batch 245/787 loss=1.249893 acc=0.4244 samples/s=1.35
+[Epoch 1] batch 246/787 loss=1.247254 acc=0.4258 samples/s=1.35
+[Epoch 1] batch 247/787 loss=1.246374 acc=0.4264 samples/s=1.35
+[Epoch 1] batch 248/787 loss=1.244042 acc=0.4280 samples/s=1.35
+[Epoch 1] batch 249/787 loss=1.242546 acc=0.4287 samples/s=1.35
+[Epoch 1] batch 250/787 loss=1.240778 acc=0.4298 samples/s=1.35
+[Epoch 1] batch 251/787 loss=1.239433 acc=0.4307 samples/s=1.35
+[Epoch 1] batch 252/787 loss=1.237146 acc=0.4317 samples/s=1.35
+[Epoch 1] batch 253/787 loss=1.235260 acc=0.4322 samples/s=1.35
+[Epoch 1] batch 254/787 loss=1.234386 acc=0.4320 samples/s=1.35
+[Epoch 1] batch 255/787 loss=1.232244 acc=0.4333 samples/s=1.35
+[Epoch 1] batch 256/787 loss=1.231692 acc=0.4335 samples/s=1.35
+[Epoch 1] batch 257/787 loss=1.231209 acc=0.4332 samples/s=1.35
+[Epoch 1] batch 258/787 loss=1.229235 acc=0.4341 samples/s=1.35
+[Epoch 1] batch 259/787 loss=1.227789 acc=0.4342 samples/s=1.35
+[Epoch 1] batch 260/787 loss=1.226517 acc=0.4344 samples/s=1.35
+[Epoch 1] batch 261/787 loss=1.224997 acc=0.4352 samples/s=1.35
+[Epoch 1] batch 262/787 loss=1.223328 acc=0.4363 samples/s=1.35
+[Epoch 1] batch 263/787 loss=1.221786 acc=0.4371 samples/s=1.35
+[Epoch 1] batch 264/787 loss=1.220051 acc=0.4384 samples/s=1.35
+[Epoch 1] batch 265/787 loss=1.218098 acc=0.4394 samples/s=1.35
+[Epoch 1] batch 266/787 loss=1.217080 acc=0.4400 samples/s=1.35
+[Epoch 1] batch 267/787 loss=1.215976 acc=0.4401 samples/s=1.35
+[Epoch 1] batch 268/787 loss=1.214776 acc=0.4404 samples/s=1.35
+[Epoch 1] batch 269/787 loss=1.212925 acc=0.4413 samples/s=1.35
+[Epoch 1] batch 270/787 loss=1.211218 acc=0.4419 samples/s=1.35
+[Epoch 1] batch 271/787 loss=1.209868 acc=0.4425 samples/s=1.35
+[Epoch 1] batch 272/787 loss=1.208838 acc=0.4432 samples/s=1.35
+[Epoch 1] batch 273/787 loss=1.208525 acc=0.4431 samples/s=1.35
+[Epoch 1] batch 274/787 loss=1.206550 acc=0.4443 samples/s=1.35
+[Epoch 1] batch 275/787 loss=1.205231 acc=0.4449 samples/s=1.35
+[Epoch 1] batch 276/787 loss=1.202782 acc=0.4461 samples/s=1.35
+[Epoch 1] batch 277/787 loss=1.201726 acc=0.4466 samples/s=1.35
+[Epoch 1] batch 278/787 loss=1.200759 acc=0.4469 samples/s=1.35
+[Epoch 1] batch 279/787 loss=1.199286 acc=0.4476 samples/s=1.35
+[Epoch 1] batch 280/787 loss=1.197822 acc=0.4483 samples/s=1.35
+[Epoch 1] batch 281/787 loss=1.196063 acc=0.4494 samples/s=1.35
+[Epoch 1] batch 282/787 loss=1.194678 acc=0.4501 samples/s=1.35
+[Epoch 1] batch 283/787 loss=1.193365 acc=0.4512 samples/s=1.35
+[Epoch 1] batch 284/787 loss=1.192650 acc=0.4517 samples/s=1.35
+[Epoch 1] batch 285/787 loss=1.190775 acc=0.4526 samples/s=1.35
+[Epoch 1] batch 286/787 loss=1.189387 acc=0.4533 samples/s=1.35
+[Epoch 1] batch 287/787 loss=1.188253 acc=0.4533 samples/s=1.35
+[Epoch 1] batch 288/787 loss=1.187274 acc=0.4538 samples/s=1.35
+[Epoch 1] batch 289/787 loss=1.185695 acc=0.4546 samples/s=1.35
+[Epoch 1] batch 290/787 loss=1.185460 acc=0.4545 samples/s=1.35
+[Epoch 1] batch 291/787 loss=1.184835 acc=0.4548 samples/s=1.35
+[Epoch 1] batch 292/787 loss=1.183501 acc=0.4555 samples/s=1.35
+[Epoch 1] batch 293/787 loss=1.182224 acc=0.4563 samples/s=1.35
+[Epoch 1] batch 294/787 loss=1.180258 acc=0.4573 samples/s=1.35
+[Epoch 1] batch 295/787 loss=1.178903 acc=0.4582 samples/s=1.35
+[Epoch 1] batch 296/787 loss=1.177501 acc=0.4589 samples/s=1.35
+[Epoch 1] batch 297/787 loss=1.176677 acc=0.4594 samples/s=1.35
+[Epoch 1] batch 298/787 loss=1.174852 acc=0.4603 samples/s=1.35
+[Epoch 1] batch 299/787 loss=1.173424 acc=0.4611 samples/s=1.35
+[Epoch 1] batch 300/787 loss=1.172249 acc=0.4616 samples/s=1.35
+[Epoch 1] batch 301/787 loss=1.170416 acc=0.4625 samples/s=1.35
+[Epoch 1] batch 302/787 loss=1.169716 acc=0.4630 samples/s=1.35
+[Epoch 1] batch 303/787 loss=1.169187 acc=0.4632 samples/s=1.35
+[Epoch 1] batch 304/787 loss=1.167846 acc=0.4640 samples/s=1.35
+[Epoch 1] batch 305/787 loss=1.166184 acc=0.4650 samples/s=1.35
+[Epoch 1] batch 306/787 loss=1.165474 acc=0.4652 samples/s=1.35
+[Epoch 1] batch 307/787 loss=1.163246 acc=0.4663 samples/s=1.35
+[Epoch 1] batch 308/787 loss=1.161620 acc=0.4671 samples/s=1.35
+[Epoch 1] batch 309/787 loss=1.160163 acc=0.4680 samples/s=1.35
+[Epoch 1] batch 310/787 loss=1.158796 acc=0.4688 samples/s=1.35
+[Epoch 1] batch 311/787 loss=1.157971 acc=0.4692 samples/s=1.35
+[Epoch 1] batch 312/787 loss=1.156658 acc=0.4697 samples/s=1.35
+[Epoch 1] batch 313/787 loss=1.155041 acc=0.4707 samples/s=1.35
+[Epoch 1] batch 314/787 loss=1.154101 acc=0.4711 samples/s=1.35
+[Epoch 1] batch 315/787 loss=1.153597 acc=0.4712 samples/s=1.35
+[Epoch 1] batch 316/787 loss=1.152494 acc=0.4713 samples/s=1.35
+[Epoch 1] batch 317/787 loss=1.151630 acc=0.4716 samples/s=1.35
+[Epoch 1] batch 318/787 loss=1.150471 acc=0.4724 samples/s=1.35
+[Epoch 1] batch 319/787 loss=1.149351 acc=0.4732 samples/s=1.35
+[Epoch 1] batch 320/787 loss=1.149173 acc=0.4734 samples/s=1.35
+[Epoch 1] batch 321/787 loss=1.148181 acc=0.4740 samples/s=1.35
+[Epoch 1] batch 322/787 loss=1.147600 acc=0.4742 samples/s=1.35
+[Epoch 1] batch 323/787 loss=1.147065 acc=0.4742 samples/s=1.35
+[Epoch 1] batch 324/787 loss=1.145947 acc=0.4743 samples/s=1.35
+[Epoch 1] batch 325/787 loss=1.145904 acc=0.4738 samples/s=1.35
+[Epoch 1] batch 326/787 loss=1.145077 acc=0.4737 samples/s=1.35
+[Epoch 1] batch 327/787 loss=1.143571 acc=0.4742 samples/s=1.35
+[Epoch 1] batch 328/787 loss=1.142623 acc=0.4747 samples/s=1.35
+[Epoch 1] batch 329/787 loss=1.141422 acc=0.4753 samples/s=1.35
+[Epoch 1] batch 330/787 loss=1.140799 acc=0.4756 samples/s=1.35
+[Epoch 1] batch 331/787 loss=1.139852 acc=0.4760 samples/s=1.35
+[Epoch 1] batch 332/787 loss=1.138408 acc=0.4768 samples/s=1.35
+[Epoch 1] batch 333/787 loss=1.136902 acc=0.4777 samples/s=1.35
+[Epoch 1] batch 334/787 loss=1.135868 acc=0.4784 samples/s=1.35
+[Epoch 1] batch 335/787 loss=1.134695 acc=0.4787 samples/s=1.35
+[Epoch 1] batch 336/787 loss=1.133354 acc=0.4794 samples/s=1.35
+[Epoch 1] batch 337/787 loss=1.132158 acc=0.4802 samples/s=1.35
+[Epoch 1] batch 338/787 loss=1.131768 acc=0.4807 samples/s=1.35
+[Epoch 1] batch 339/787 loss=1.130558 acc=0.4814 samples/s=1.35
+[Epoch 1] batch 340/787 loss=1.129937 acc=0.4814 samples/s=1.35
+[Epoch 1] batch 341/787 loss=1.129143 acc=0.4818 samples/s=1.35
+[Epoch 1] batch 342/787 loss=1.127435 acc=0.4825 samples/s=1.35
+[Epoch 1] batch 343/787 loss=1.125996 acc=0.4832 samples/s=1.35
+[Epoch 1] batch 344/787 loss=1.124158 acc=0.4844 samples/s=1.35
+[Epoch 1] batch 345/787 loss=1.122745 acc=0.4851 samples/s=1.35
+[Epoch 1] batch 346/787 loss=1.121839 acc=0.4855 samples/s=1.35
+[Epoch 1] batch 347/787 loss=1.120764 acc=0.4857 samples/s=1.35
+[Epoch 1] batch 348/787 loss=1.119793 acc=0.4859 samples/s=1.35
+[Epoch 1] batch 349/787 loss=1.119302 acc=0.4859 samples/s=1.35
+[Epoch 1] batch 350/787 loss=1.118366 acc=0.4862 samples/s=1.35
+[Epoch 1] batch 351/787 loss=1.117486 acc=0.4866 samples/s=1.35
+[Epoch 1] batch 352/787 loss=1.116124 acc=0.4874 samples/s=1.35
+[Epoch 1] batch 353/787 loss=1.115842 acc=0.4874 samples/s=1.35
+[Epoch 1] batch 354/787 loss=1.114428 acc=0.4880 samples/s=1.35
+[Epoch 1] batch 355/787 loss=1.113760 acc=0.4880 samples/s=1.35
+[Epoch 1] batch 356/787 loss=1.112194 acc=0.4888 samples/s=1.35
+[Epoch 1] batch 357/787 loss=1.111364 acc=0.4893 samples/s=1.35
+[Epoch 1] batch 358/787 loss=1.110541 acc=0.4896 samples/s=1.35
+[Epoch 1] batch 359/787 loss=1.110204 acc=0.4896 samples/s=1.35
+[Epoch 1] batch 360/787 loss=1.109433 acc=0.4899 samples/s=1.35
+[Epoch 1] batch 361/787 loss=1.108133 acc=0.4907 samples/s=1.35
+[Epoch 1] batch 362/787 loss=1.107195 acc=0.4911 samples/s=1.35
+[Epoch 1] batch 363/787 loss=1.106426 acc=0.4912 samples/s=1.35
+[Epoch 1] batch 364/787 loss=1.105071 acc=0.4921 samples/s=1.35
+[Epoch 1] batch 365/787 loss=1.104183 acc=0.4924 samples/s=1.35
+[Epoch 1] batch 366/787 loss=1.103370 acc=0.4925 samples/s=1.35
+[Epoch 1] batch 367/787 loss=1.102503 acc=0.4930 samples/s=1.35
+[Epoch 1] batch 368/787 loss=1.101421 acc=0.4936 samples/s=1.35
+[Epoch 1] batch 369/787 loss=1.100601 acc=0.4941 samples/s=1.35
+[Epoch 1] batch 370/787 loss=1.099707 acc=0.4946 samples/s=1.35
+[Epoch 1] batch 371/787 loss=1.098783 acc=0.4949 samples/s=1.35
+[Epoch 1] batch 372/787 loss=1.097300 acc=0.4956 samples/s=1.35
+[Epoch 1] batch 373/787 loss=1.096333 acc=0.4961 samples/s=1.35
+[Epoch 1] batch 374/787 loss=1.095533 acc=0.4967 samples/s=1.35
+[Epoch 1] batch 375/787 loss=1.094372 acc=0.4972 samples/s=1.35
+[Epoch 1] batch 376/787 loss=1.093311 acc=0.4978 samples/s=1.35
+[Epoch 1] batch 377/787 loss=1.092684 acc=0.4980 samples/s=1.35
+[Epoch 1] batch 378/787 loss=1.091645 acc=0.4986 samples/s=1.35
+[Epoch 1] batch 379/787 loss=1.090580 acc=0.4990 samples/s=1.35
+[Epoch 1] batch 380/787 loss=1.089636 acc=0.4997 samples/s=1.35
+[Epoch 1] batch 381/787 loss=1.089114 acc=0.5000 samples/s=1.35
+[Epoch 1] batch 382/787 loss=1.088355 acc=0.5004 samples/s=1.35
+[Epoch 1] batch 383/787 loss=1.087640 acc=0.5007 samples/s=1.35
+[Epoch 1] batch 384/787 loss=1.087142 acc=0.5009 samples/s=1.35
+[Epoch 1] batch 385/787 loss=1.086124 acc=0.5014 samples/s=1.35
+[Epoch 1] batch 386/787 loss=1.085819 acc=0.5014 samples/s=1.35
+[Epoch 1] batch 387/787 loss=1.084725 acc=0.5019 samples/s=1.35
+[Epoch 1] batch 388/787 loss=1.083788 acc=0.5024 samples/s=1.35
+[Epoch 1] batch 389/787 loss=1.082941 acc=0.5030 samples/s=1.35
+[Epoch 1] batch 390/787 loss=1.082004 acc=0.5035 samples/s=1.35
+[Epoch 1] batch 391/787 loss=1.081108 acc=0.5040 samples/s=1.35
+[Epoch 1] batch 392/787 loss=1.080648 acc=0.5042 samples/s=1.35
+[Epoch 1] batch 393/787 loss=1.079439 acc=0.5048 samples/s=1.35
+[Epoch 1] batch 394/787 loss=1.078405 acc=0.5052 samples/s=1.35
+[Epoch 1] batch 395/787 loss=1.077279 acc=0.5059 samples/s=1.35
+[Epoch 1] batch 396/787 loss=1.076454 acc=0.5064 samples/s=1.35
+[Epoch 1] batch 397/787 loss=1.075624 acc=0.5067 samples/s=1.35
+[Epoch 1] batch 398/787 loss=1.074979 acc=0.5068 samples/s=1.35
+[Epoch 1] batch 399/787 loss=1.074457 acc=0.5072 samples/s=1.35
+[Epoch 1] batch 400/787 loss=1.073685 acc=0.5074 samples/s=1.35
+[Epoch 1] batch 401/787 loss=1.072681 acc=0.5078 samples/s=1.35
+[Epoch 1] batch 402/787 loss=1.071671 acc=0.5082 samples/s=1.35
+[Epoch 1] batch 403/787 loss=1.071011 acc=0.5084 samples/s=1.35
+[Epoch 1] batch 404/787 loss=1.070437 acc=0.5086 samples/s=1.35
+[Epoch 1] batch 405/787 loss=1.069846 acc=0.5086 samples/s=1.35
+[Epoch 1] batch 406/787 loss=1.068586 acc=0.5092 samples/s=1.35
+[Epoch 1] batch 407/787 loss=1.067576 acc=0.5098 samples/s=1.35
+[Epoch 1] batch 408/787 loss=1.066772 acc=0.5103 samples/s=1.35
+[Epoch 1] batch 409/787 loss=1.065634 acc=0.5109 samples/s=1.35
+[Epoch 1] batch 410/787 loss=1.065235 acc=0.5111 samples/s=1.35
+[Epoch 1] batch 411/787 loss=1.064608 acc=0.5116 samples/s=1.35
+[Epoch 1] batch 412/787 loss=1.063864 acc=0.5119 samples/s=1.35
+[Epoch 1] batch 413/787 loss=1.062737 acc=0.5124 samples/s=1.35
+[Epoch 1] batch 414/787 loss=1.062502 acc=0.5124 samples/s=1.35
+[Epoch 1] batch 415/787 loss=1.061650 acc=0.5128 samples/s=1.35
+[Epoch 1] batch 416/787 loss=1.061028 acc=0.5129 samples/s=1.35
+[Epoch 1] batch 417/787 loss=1.060434 acc=0.5133 samples/s=1.35
+[Epoch 1] batch 418/787 loss=1.059330 acc=0.5140 samples/s=1.35
+[Epoch 1] batch 419/787 loss=1.058629 acc=0.5142 samples/s=1.35
+[Epoch 1] batch 420/787 loss=1.058031 acc=0.5144 samples/s=1.35
+[Epoch 1] batch 421/787 loss=1.057022 acc=0.5149 samples/s=1.35
+[Epoch 1] batch 422/787 loss=1.056561 acc=0.5151 samples/s=1.35
+[Epoch 1] batch 423/787 loss=1.055757 acc=0.5154 samples/s=1.35
+[Epoch 1] batch 424/787 loss=1.055174 acc=0.5153 samples/s=1.35
+[Epoch 1] batch 425/787 loss=1.054600 acc=0.5154 samples/s=1.35
+[Epoch 1] batch 426/787 loss=1.053677 acc=0.5158 samples/s=1.35
+[Epoch 1] batch 427/787 loss=1.053022 acc=0.5162 samples/s=1.35
+[Epoch 1] batch 428/787 loss=1.052105 acc=0.5166 samples/s=1.35
+[Epoch 1] batch 429/787 loss=1.051268 acc=0.5169 samples/s=1.35
+[Epoch 1] batch 430/787 loss=1.050011 acc=0.5174 samples/s=1.35
+[Epoch 1] batch 431/787 loss=1.049569 acc=0.5173 samples/s=1.35
+[Epoch 1] batch 432/787 loss=1.048588 acc=0.5177 samples/s=1.35
+[Epoch 1] batch 433/787 loss=1.047938 acc=0.5181 samples/s=1.35
+[Epoch 1] batch 434/787 loss=1.046868 acc=0.5186 samples/s=1.35
+[Epoch 1] batch 435/787 loss=1.045815 acc=0.5191 samples/s=1.35
+[Epoch 1] batch 436/787 loss=1.045202 acc=0.5194 samples/s=1.35
+[Epoch 1] batch 437/787 loss=1.044440 acc=0.5198 samples/s=1.35
+[Epoch 1] batch 438/787 loss=1.044000 acc=0.5199 samples/s=1.35
+[Epoch 1] batch 439/787 loss=1.042896 acc=0.5204 samples/s=1.35
+[Epoch 1] batch 440/787 loss=1.042375 acc=0.5206 samples/s=1.35
+[Epoch 1] batch 441/787 loss=1.041666 acc=0.5207 samples/s=1.35
+[Epoch 1] batch 442/787 loss=1.041220 acc=0.5211 samples/s=1.35
+[Epoch 1] batch 443/787 loss=1.040490 acc=0.5212 samples/s=1.35
+[Epoch 1] batch 444/787 loss=1.039611 acc=0.5216 samples/s=1.35
+[Epoch 1] batch 445/787 loss=1.038588 acc=0.5221 samples/s=1.35
+[Epoch 1] batch 446/787 loss=1.037874 acc=0.5224 samples/s=1.35
+[Epoch 1] batch 447/787 loss=1.037202 acc=0.5227 samples/s=1.35
+[Epoch 1] batch 448/787 loss=1.036246 acc=0.5232 samples/s=1.35
+[Epoch 1] batch 449/787 loss=1.035678 acc=0.5233 samples/s=1.35
+[Epoch 1] batch 450/787 loss=1.034787 acc=0.5239 samples/s=1.35
+[Epoch 1] batch 451/787 loss=1.034265 acc=0.5240 samples/s=1.35
+[Epoch 1] batch 452/787 loss=1.033568 acc=0.5245 samples/s=1.35
+[Epoch 1] batch 453/787 loss=1.032749 acc=0.5248 samples/s=1.35
+[Epoch 1] batch 454/787 loss=1.031920 acc=0.5251 samples/s=1.35
+[Epoch 1] batch 455/787 loss=1.031567 acc=0.5251 samples/s=1.35
+[Epoch 1] batch 456/787 loss=1.030793 acc=0.5252 samples/s=1.35
+[Epoch 1] batch 457/787 loss=1.029812 acc=0.5255 samples/s=1.35
+[Epoch 1] batch 458/787 loss=1.028895 acc=0.5259 samples/s=1.35
+[Epoch 1] batch 459/787 loss=1.028194 acc=0.5260 samples/s=1.35
+[Epoch 1] batch 460/787 loss=1.027459 acc=0.5264 samples/s=1.35
+[Epoch 1] batch 461/787 loss=1.027071 acc=0.5263 samples/s=1.35
+[Epoch 1] batch 462/787 loss=1.026121 acc=0.5269 samples/s=1.35
+[Epoch 1] batch 463/787 loss=1.025004 acc=0.5274 samples/s=1.35
+[Epoch 1] batch 464/787 loss=1.024309 acc=0.5277 samples/s=1.35
+[Epoch 1] batch 465/787 loss=1.023445 acc=0.5280 samples/s=1.35
+[Epoch 1] batch 466/787 loss=1.022933 acc=0.5282 samples/s=1.35
+[Epoch 1] batch 467/787 loss=1.021988 acc=0.5285 samples/s=1.35
+[Epoch 1] batch 468/787 loss=1.020897 acc=0.5291 samples/s=1.35
+[Epoch 1] batch 469/787 loss=1.020194 acc=0.5294 samples/s=1.35
+[Epoch 1] batch 470/787 loss=1.019529 acc=0.5298 samples/s=1.35
+[Epoch 1] batch 471/787 loss=1.018789 acc=0.5301 samples/s=1.35
+[Epoch 1] batch 472/787 loss=1.018203 acc=0.5303 samples/s=1.35
+[Epoch 1] batch 473/787 loss=1.017543 acc=0.5306 samples/s=1.35
+[Epoch 1] batch 474/787 loss=1.017149 acc=0.5307 samples/s=1.35
+[Epoch 1] batch 475/787 loss=1.016182 acc=0.5312 samples/s=1.35
+[Epoch 1] batch 476/787 loss=1.015978 acc=0.5311 samples/s=1.35
+[Epoch 1] batch 477/787 loss=1.015301 acc=0.5311 samples/s=1.35
+[Epoch 1] batch 478/787 loss=1.014355 acc=0.5313 samples/s=1.35
+[Epoch 1] batch 479/787 loss=1.013074 acc=0.5319 samples/s=1.35
+[Epoch 1] batch 480/787 loss=1.012231 acc=0.5322 samples/s=1.35
+[Epoch 1] batch 481/787 loss=1.011569 acc=0.5324 samples/s=1.35
+[Epoch 1] batch 482/787 loss=1.010748 acc=0.5328 samples/s=1.35
+[Epoch 1] batch 483/787 loss=1.010098 acc=0.5329 samples/s=1.35
+[Epoch 1] batch 484/787 loss=1.009503 acc=0.5331 samples/s=1.35
+[Epoch 1] batch 485/787 loss=1.008644 acc=0.5334 samples/s=1.35
+[Epoch 1] batch 486/787 loss=1.007829 acc=0.5336 samples/s=1.35
+[Epoch 1] batch 487/787 loss=1.006749 acc=0.5341 samples/s=1.35
+[Epoch 1] batch 488/787 loss=1.005843 acc=0.5346 samples/s=1.35
+[Epoch 1] batch 489/787 loss=1.005121 acc=0.5350 samples/s=1.35
+[Epoch 1] batch 490/787 loss=1.004446 acc=0.5352 samples/s=1.35
+[Epoch 1] batch 491/787 loss=1.004060 acc=0.5353 samples/s=1.35
+[Epoch 1] batch 492/787 loss=1.003074 acc=0.5357 samples/s=1.35
+[Epoch 1] batch 493/787 loss=1.002642 acc=0.5359 samples/s=1.35
+[Epoch 1] batch 494/787 loss=1.001711 acc=0.5363 samples/s=1.35
+[Epoch 1] batch 495/787 loss=1.001069 acc=0.5366 samples/s=1.35
+[Epoch 1] batch 496/787 loss=1.000660 acc=0.5367 samples/s=1.35
+[Epoch 1] batch 497/787 loss=0.999974 acc=0.5371 samples/s=1.35
+[Epoch 1] batch 498/787 loss=0.999049 acc=0.5373 samples/s=1.35
+[Epoch 1] batch 499/787 loss=0.998261 acc=0.5376 samples/s=1.35
+[Epoch 1] batch 500/787 loss=0.997350 acc=0.5379 samples/s=1.35
+[Epoch 1] batch 501/787 loss=0.996923 acc=0.5377 samples/s=1.35
+[Epoch 1] batch 502/787 loss=0.995944 acc=0.5382 samples/s=1.35
+[Epoch 1] batch 503/787 loss=0.995043 acc=0.5386 samples/s=1.35
+[Epoch 1] batch 504/787 loss=0.994213 acc=0.5388 samples/s=1.35
+[Epoch 1] batch 505/787 loss=0.993417 acc=0.5392 samples/s=1.35
+[Epoch 1] batch 506/787 loss=0.992982 acc=0.5393 samples/s=1.35
+[Epoch 1] batch 507/787 loss=0.992287 acc=0.5395 samples/s=1.35
+[Epoch 1] batch 508/787 loss=0.992043 acc=0.5394 samples/s=1.35
+[Epoch 1] batch 509/787 loss=0.991144 acc=0.5397 samples/s=1.35
+[Epoch 1] batch 510/787 loss=0.990489 acc=0.5401 samples/s=1.35
+[Epoch 1] batch 511/787 loss=0.989961 acc=0.5404 samples/s=1.35
+[Epoch 1] batch 512/787 loss=0.989341 acc=0.5407 samples/s=1.35
+[Epoch 1] batch 513/787 loss=0.988761 acc=0.5408 samples/s=1.35
+[Epoch 1] batch 514/787 loss=0.987970 acc=0.5412 samples/s=1.35
+[Epoch 1] batch 515/787 loss=0.987272 acc=0.5416 samples/s=1.35
+[Epoch 1] batch 516/787 loss=0.986686 acc=0.5418 samples/s=1.35
+[Epoch 1] batch 517/787 loss=0.986047 acc=0.5419 samples/s=1.35
+[Epoch 1] batch 518/787 loss=0.985388 acc=0.5423 samples/s=1.35
+[Epoch 1] batch 519/787 loss=0.984683 acc=0.5425 samples/s=1.35
+[Epoch 1] batch 520/787 loss=0.983792 acc=0.5430 samples/s=1.35
+[Epoch 1] batch 521/787 loss=0.983037 acc=0.5432 samples/s=1.35
+[Epoch 1] batch 522/787 loss=0.982262 acc=0.5435 samples/s=1.35
+[Epoch 1] batch 523/787 loss=0.981310 acc=0.5438 samples/s=1.35
+[Epoch 1] batch 524/787 loss=0.980987 acc=0.5441 samples/s=1.35
+[Epoch 1] batch 525/787 loss=0.980566 acc=0.5442 samples/s=1.35
+[Epoch 1] batch 526/787 loss=0.979797 acc=0.5445 samples/s=1.35
+[Epoch 1] batch 527/787 loss=0.979229 acc=0.5445 samples/s=1.35
+[Epoch 1] batch 528/787 loss=0.978657 acc=0.5447 samples/s=1.35
+[Epoch 1] batch 529/787 loss=0.978386 acc=0.5448 samples/s=1.35
+[Epoch 1] batch 530/787 loss=0.977474 acc=0.5452 samples/s=1.35
+[Epoch 1] batch 531/787 loss=0.977190 acc=0.5451 samples/s=1.35
+[Epoch 1] batch 532/787 loss=0.976550 acc=0.5452 samples/s=1.35
+[Epoch 1] batch 533/787 loss=0.975951 acc=0.5454 samples/s=1.35
+[Epoch 1] batch 534/787 loss=0.975231 acc=0.5458 samples/s=1.35
+[Epoch 1] batch 535/787 loss=0.974463 acc=0.5461 samples/s=1.35
+[Epoch 1] batch 536/787 loss=0.973903 acc=0.5463 samples/s=1.35
+[Epoch 1] batch 537/787 loss=0.973141 acc=0.5466 samples/s=1.35
+[Epoch 1] batch 538/787 loss=0.972436 acc=0.5468 samples/s=1.35
+[Epoch 1] batch 539/787 loss=0.971729 acc=0.5471 samples/s=1.35
+[Epoch 1] batch 540/787 loss=0.970858 acc=0.5476 samples/s=1.35
+[Epoch 1] batch 541/787 loss=0.970422 acc=0.5477 samples/s=1.35
+[Epoch 1] batch 542/787 loss=0.969898 acc=0.5479 samples/s=1.35
+[Epoch 1] batch 543/787 loss=0.969009 acc=0.5483 samples/s=1.35
+[Epoch 1] batch 544/787 loss=0.968225 acc=0.5487 samples/s=1.35
+[Epoch 1] batch 545/787 loss=0.968145 acc=0.5486 samples/s=1.35
+[Epoch 1] batch 546/787 loss=0.967680 acc=0.5488 samples/s=1.35
+[Epoch 1] batch 547/787 loss=0.966849 acc=0.5490 samples/s=1.35
+[Epoch 1] batch 548/787 loss=0.966107 acc=0.5493 samples/s=1.35
+[Epoch 1] batch 549/787 loss=0.966024 acc=0.5492 samples/s=1.35
+[Epoch 1] batch 550/787 loss=0.965736 acc=0.5494 samples/s=1.35
+[Epoch 1] batch 551/787 loss=0.964946 acc=0.5496 samples/s=1.35
+[Epoch 1] batch 552/787 loss=0.964284 acc=0.5499 samples/s=1.35
+[Epoch 1] batch 553/787 loss=0.963604 acc=0.5501 samples/s=1.35
+[Epoch 1] batch 554/787 loss=0.962864 acc=0.5503 samples/s=1.35
+[Epoch 1] batch 555/787 loss=0.961818 acc=0.5510 samples/s=1.35
+[Epoch 1] batch 556/787 loss=0.961592 acc=0.5510 samples/s=1.35
+[Epoch 1] batch 557/787 loss=0.960792 acc=0.5513 samples/s=1.35
+[Epoch 1] batch 558/787 loss=0.959869 acc=0.5517 samples/s=1.35
+[Epoch 1] batch 559/787 loss=0.959175 acc=0.5519 samples/s=1.35
+[Epoch 1] batch 560/787 loss=0.958790 acc=0.5520 samples/s=1.35
+[Epoch 1] batch 561/787 loss=0.958056 acc=0.5522 samples/s=1.35
+[Epoch 1] batch 562/787 loss=0.957438 acc=0.5525 samples/s=1.35
+[Epoch 1] batch 563/787 loss=0.956924 acc=0.5527 samples/s=1.35
+[Epoch 1] batch 564/787 loss=0.956563 acc=0.5527 samples/s=1.35
+[Epoch 1] batch 565/787 loss=0.956192 acc=0.5531 samples/s=1.35
+[Epoch 1] batch 566/787 loss=0.956136 acc=0.5531 samples/s=1.35
+[Epoch 1] batch 567/787 loss=0.955742 acc=0.5531 samples/s=1.35
+[Epoch 1] batch 568/787 loss=0.955391 acc=0.5533 samples/s=1.35
+[Epoch 1] batch 569/787 loss=0.954721 acc=0.5536 samples/s=1.35
+[Epoch 1] batch 570/787 loss=0.953972 acc=0.5539 samples/s=1.35
+[Epoch 1] batch 571/787 loss=0.953188 acc=0.5543 samples/s=1.35
+[Epoch 1] batch 572/787 loss=0.952847 acc=0.5544 samples/s=1.35
+[Epoch 1] batch 573/787 loss=0.952242 acc=0.5546 samples/s=1.35
+[Epoch 1] batch 574/787 loss=0.951527 acc=0.5550 samples/s=1.35
+[Epoch 1] batch 575/787 loss=0.951302 acc=0.5550 samples/s=1.35
+[Epoch 1] batch 576/787 loss=0.950623 acc=0.5553 samples/s=1.35
+[Epoch 1] batch 577/787 loss=0.949949 acc=0.5555 samples/s=1.35
+[Epoch 1] batch 578/787 loss=0.949442 acc=0.5556 samples/s=1.35
+[Epoch 1] batch 579/787 loss=0.949299 acc=0.5555 samples/s=1.35
+[Epoch 1] batch 580/787 loss=0.948724 acc=0.5558 samples/s=1.35
+[Epoch 1] batch 581/787 loss=0.948180 acc=0.5558 samples/s=1.35
+[Epoch 1] batch 582/787 loss=0.947480 acc=0.5561 samples/s=1.35
+[Epoch 1] batch 583/787 loss=0.946751 acc=0.5564 samples/s=1.35
+[Epoch 1] batch 584/787 loss=0.946169 acc=0.5566 samples/s=1.35
+[Epoch 1] batch 585/787 loss=0.945874 acc=0.5566 samples/s=1.35
+[Epoch 1] batch 586/787 loss=0.945386 acc=0.5568 samples/s=1.35
+[Epoch 1] batch 587/787 loss=0.944955 acc=0.5569 samples/s=1.35
+[Epoch 1] batch 588/787 loss=0.944478 acc=0.5571 samples/s=1.35
+[Epoch 1] batch 589/787 loss=0.943894 acc=0.5574 samples/s=1.35
+[Epoch 1] batch 590/787 loss=0.943532 acc=0.5574 samples/s=1.35
+[Epoch 1] batch 591/787 loss=0.943240 acc=0.5574 samples/s=1.35
+[Epoch 1] batch 592/787 loss=0.942836 acc=0.5574 samples/s=1.35
+[Epoch 1] batch 593/787 loss=0.942413 acc=0.5574 samples/s=1.35
+[Epoch 1] batch 594/787 loss=0.941709 acc=0.5578 samples/s=1.35
+[Epoch 1] batch 595/787 loss=0.941174 acc=0.5581 samples/s=1.35
+[Epoch 1] batch 596/787 loss=0.940571 acc=0.5584 samples/s=1.35
+[Epoch 1] batch 597/787 loss=0.940187 acc=0.5585 samples/s=1.35
+[Epoch 1] batch 598/787 loss=0.939757 acc=0.5586 samples/s=1.35
+[Epoch 1] batch 599/787 loss=0.939023 acc=0.5587 samples/s=1.35
+[Epoch 1] batch 600/787 loss=0.938590 acc=0.5589 samples/s=1.35
+[Epoch 1] batch 601/787 loss=0.938076 acc=0.5591 samples/s=1.35
+[Epoch 1] batch 602/787 loss=0.937455 acc=0.5592 samples/s=1.35
+[Epoch 1] batch 603/787 loss=0.936891 acc=0.5595 samples/s=1.35
+[Epoch 1] batch 604/787 loss=0.936495 acc=0.5595 samples/s=1.35
+[Epoch 1] batch 605/787 loss=0.936036 acc=0.5598 samples/s=1.35
+[Epoch 1] batch 606/787 loss=0.935598 acc=0.5598 samples/s=1.35
+[Epoch 1] batch 607/787 loss=0.935354 acc=0.5599 samples/s=1.35
+[Epoch 1] batch 608/787 loss=0.934917 acc=0.5601 samples/s=1.35
+[Epoch 1] batch 609/787 loss=0.934725 acc=0.5601 samples/s=1.35
+[Epoch 1] batch 610/787 loss=0.934307 acc=0.5603 samples/s=1.35
+[Epoch 1] batch 611/787 loss=0.933718 acc=0.5606 samples/s=1.35
+[Epoch 1] batch 612/787 loss=0.933750 acc=0.5607 samples/s=1.35
+[Epoch 1] batch 613/787 loss=0.933209 acc=0.5609 samples/s=1.35
+[Epoch 1] batch 614/787 loss=0.932574 acc=0.5612 samples/s=1.35
+[Epoch 1] batch 615/787 loss=0.931705 acc=0.5619 samples/s=1.35
+[Epoch 1] batch 616/787 loss=0.931485 acc=0.5619 samples/s=1.35
+[Epoch 1] batch 617/787 loss=0.931111 acc=0.5621 samples/s=1.35
+[Epoch 1] batch 618/787 loss=0.930934 acc=0.5620 samples/s=1.35
+[Epoch 1] batch 619/787 loss=0.930637 acc=0.5620 samples/s=1.35
+[Epoch 1] batch 620/787 loss=0.930097 acc=0.5621 samples/s=1.35
+[Epoch 1] batch 621/787 loss=0.929590 acc=0.5623 samples/s=1.35
+[Epoch 1] batch 622/787 loss=0.928973 acc=0.5626 samples/s=1.35
+[Epoch 1] batch 623/787 loss=0.928346 acc=0.5629 samples/s=1.35
+[Epoch 1] batch 624/787 loss=0.927616 acc=0.5631 samples/s=1.35
+[Epoch 1] batch 625/787 loss=0.927143 acc=0.5632 samples/s=1.35
+[Epoch 1] batch 626/787 loss=0.927095 acc=0.5630 samples/s=1.35
+[Epoch 1] batch 627/787 loss=0.926815 acc=0.5632 samples/s=1.35
+[Epoch 1] batch 628/787 loss=0.926347 acc=0.5632 samples/s=1.35
+[Epoch 1] batch 629/787 loss=0.925847 acc=0.5634 samples/s=1.35
+[Epoch 1] batch 630/787 loss=0.925191 acc=0.5637 samples/s=1.35
+[Epoch 1] batch 631/787 loss=0.924548 acc=0.5639 samples/s=1.35
+[Epoch 1] batch 632/787 loss=0.923886 acc=0.5642 samples/s=1.35
+[Epoch 1] batch 633/787 loss=0.923328 acc=0.5645 samples/s=1.35
+[Epoch 1] batch 634/787 loss=0.922995 acc=0.5645 samples/s=1.35
+[Epoch 1] batch 635/787 loss=0.922278 acc=0.5648 samples/s=1.35
+[Epoch 1] batch 636/787 loss=0.921922 acc=0.5649 samples/s=1.35
+[Epoch 1] batch 637/787 loss=0.921238 acc=0.5654 samples/s=1.35
+[Epoch 1] batch 638/787 loss=0.920890 acc=0.5654 samples/s=1.35
+[Epoch 1] batch 639/787 loss=0.920420 acc=0.5656 samples/s=1.35
+[Epoch 1] batch 640/787 loss=0.920280 acc=0.5656 samples/s=1.35
+[Epoch 1] batch 641/787 loss=0.919831 acc=0.5657 samples/s=1.35
+[Epoch 1] batch 642/787 loss=0.919261 acc=0.5659 samples/s=1.35
+[Epoch 1] batch 643/787 loss=0.918556 acc=0.5662 samples/s=1.35
+[Epoch 1] batch 644/787 loss=0.918073 acc=0.5665 samples/s=1.35
+[Epoch 1] batch 645/787 loss=0.917563 acc=0.5667 samples/s=1.35
+[Epoch 1] batch 646/787 loss=0.917073 acc=0.5669 samples/s=1.35
+[Epoch 1] batch 647/787 loss=0.916715 acc=0.5670 samples/s=1.35
+[Epoch 1] batch 648/787 loss=0.916177 acc=0.5673 samples/s=1.35
+[Epoch 1] batch 649/787 loss=0.915996 acc=0.5672 samples/s=1.35
+[Epoch 1] batch 650/787 loss=0.915325 acc=0.5674 samples/s=1.35
+[Epoch 1] batch 651/787 loss=0.914958 acc=0.5675 samples/s=1.35
+[Epoch 1] batch 652/787 loss=0.914485 acc=0.5677 samples/s=1.35
+[Epoch 1] batch 653/787 loss=0.913892 acc=0.5678 samples/s=1.35
+[Epoch 1] batch 654/787 loss=0.913163 acc=0.5680 samples/s=1.35
+[Epoch 1] batch 655/787 loss=0.912479 acc=0.5684 samples/s=1.35
+[Epoch 1] batch 656/787 loss=0.911992 acc=0.5686 samples/s=1.35
+[Epoch 1] batch 657/787 loss=0.911747 acc=0.5685 samples/s=1.35
+[Epoch 1] batch 658/787 loss=0.911036 acc=0.5689 samples/s=1.35
+[Epoch 1] batch 659/787 loss=0.910453 acc=0.5692 samples/s=1.35
+[Epoch 1] batch 660/787 loss=0.909524 acc=0.5697 samples/s=1.35
+[Epoch 1] batch 661/787 loss=0.909341 acc=0.5697 samples/s=1.35
+[Epoch 1] batch 662/787 loss=0.908953 acc=0.5698 samples/s=1.35
+[Epoch 1] batch 663/787 loss=0.908394 acc=0.5699 samples/s=1.35
+[Epoch 1] batch 664/787 loss=0.907964 acc=0.5701 samples/s=1.35
+[Epoch 1] batch 665/787 loss=0.907241 acc=0.5704 samples/s=1.35
+[Epoch 1] batch 666/787 loss=0.906919 acc=0.5705 samples/s=1.35
+[Epoch 1] batch 667/787 loss=0.906792 acc=0.5707 samples/s=1.35
+[Epoch 1] batch 668/787 loss=0.906221 acc=0.5709 samples/s=1.35
+[Epoch 1] batch 669/787 loss=0.906013 acc=0.5709 samples/s=1.35
+[Epoch 1] batch 670/787 loss=0.906034 acc=0.5707 samples/s=1.35
+[Epoch 1] batch 671/787 loss=0.906390 acc=0.5703 samples/s=1.35
+[Epoch 1] batch 672/787 loss=0.906050 acc=0.5705 samples/s=1.35
+[Epoch 1] batch 673/787 loss=0.905818 acc=0.5707 samples/s=1.35
+[Epoch 1] batch 674/787 loss=0.905611 acc=0.5708 samples/s=1.35
+[Epoch 1] batch 675/787 loss=0.905275 acc=0.5711 samples/s=1.35
+[Epoch 1] batch 676/787 loss=0.905513 acc=0.5710 samples/s=1.35
+[Epoch 1] batch 677/787 loss=0.905602 acc=0.5708 samples/s=1.35
+[Epoch 1] batch 678/787 loss=0.905229 acc=0.5710 samples/s=1.35
+[Epoch 1] batch 679/787 loss=0.904790 acc=0.5711 samples/s=1.35
+[Epoch 1] batch 680/787 loss=0.904474 acc=0.5712 samples/s=1.35
+[Epoch 1] batch 681/787 loss=0.904358 acc=0.5713 samples/s=1.35
+[Epoch 1] batch 682/787 loss=0.903714 acc=0.5717 samples/s=1.35
+[Epoch 1] batch 683/787 loss=0.903167 acc=0.5719 samples/s=1.35
+[Epoch 1] batch 684/787 loss=0.903064 acc=0.5718 samples/s=1.35
+[Epoch 1] batch 685/787 loss=0.902445 acc=0.5720 samples/s=1.35
+[Epoch 1] batch 686/787 loss=0.902381 acc=0.5720 samples/s=1.35
+[Epoch 1] batch 687/787 loss=0.901782 acc=0.5723 samples/s=1.35
+[Epoch 1] batch 688/787 loss=0.901434 acc=0.5724 samples/s=1.35
+[Epoch 1] batch 689/787 loss=0.901021 acc=0.5725 samples/s=1.35
+[Epoch 1] batch 690/787 loss=0.900856 acc=0.5726 samples/s=1.35
+[Epoch 1] batch 691/787 loss=0.900269 acc=0.5728 samples/s=1.35
+[Epoch 1] batch 692/787 loss=0.899682 acc=0.5731 samples/s=1.35
+[Epoch 1] batch 693/787 loss=0.899331 acc=0.5732 samples/s=1.35
+[Epoch 1] batch 694/787 loss=0.899126 acc=0.5733 samples/s=1.35
+[Epoch 1] batch 695/787 loss=0.898826 acc=0.5735 samples/s=1.35
+[Epoch 1] batch 696/787 loss=0.898383 acc=0.5735 samples/s=1.35
+[Epoch 1] batch 697/787 loss=0.897743 acc=0.5737 samples/s=1.35
+[Epoch 1] batch 698/787 loss=0.897448 acc=0.5737 samples/s=1.35
+[Epoch 1] batch 699/787 loss=0.896860 acc=0.5739 samples/s=1.35
+[Epoch 1] batch 700/787 loss=0.896484 acc=0.5742 samples/s=1.35
+[Epoch 1] batch 701/787 loss=0.896146 acc=0.5742 samples/s=1.35
+[Epoch 1] batch 702/787 loss=0.895668 acc=0.5744 samples/s=1.35
+[Epoch 1] batch 703/787 loss=0.895366 acc=0.5744 samples/s=1.35
+[Epoch 1] batch 704/787 loss=0.894763 acc=0.5747 samples/s=1.35
+[Epoch 1] batch 705/787 loss=0.894559 acc=0.5746 samples/s=1.35
+[Epoch 1] batch 706/787 loss=0.894139 acc=0.5747 samples/s=1.35
+[Epoch 1] batch 707/787 loss=0.893708 acc=0.5749 samples/s=1.35
+[Epoch 1] batch 708/787 loss=0.893202 acc=0.5751 samples/s=1.35
+[Epoch 1] batch 709/787 loss=0.892905 acc=0.5751 samples/s=1.35
+[Epoch 1] batch 710/787 loss=0.892345 acc=0.5754 samples/s=1.35
+[Epoch 1] batch 711/787 loss=0.891792 acc=0.5756 samples/s=1.35
+[Epoch 1] batch 712/787 loss=0.891441 acc=0.5758 samples/s=1.35
+[Epoch 1] batch 713/787 loss=0.890894 acc=0.5760 samples/s=1.35
+[Epoch 1] batch 714/787 loss=0.890797 acc=0.5760 samples/s=1.35
+[Epoch 1] batch 715/787 loss=0.890612 acc=0.5758 samples/s=1.35
+[Epoch 1] batch 716/787 loss=0.890276 acc=0.5761 samples/s=1.35
+[Epoch 1] batch 717/787 loss=0.889854 acc=0.5763 samples/s=1.35
+[Epoch 1] batch 718/787 loss=0.889661 acc=0.5763 samples/s=1.35
+[Epoch 1] batch 719/787 loss=0.888979 acc=0.5766 samples/s=1.35
+[Epoch 1] batch 720/787 loss=0.888751 acc=0.5766 samples/s=1.35
+[Epoch 1] batch 721/787 loss=0.888482 acc=0.5765 samples/s=1.35
+[Epoch 1] batch 722/787 loss=0.888013 acc=0.5768 samples/s=1.35
+[Epoch 1] batch 723/787 loss=0.887604 acc=0.5770 samples/s=1.35
+[Epoch 1] batch 724/787 loss=0.887406 acc=0.5770 samples/s=1.35
+[Epoch 1] batch 725/787 loss=0.887274 acc=0.5770 samples/s=1.35
+[Epoch 1] batch 726/787 loss=0.887018 acc=0.5770 samples/s=1.35
+[Epoch 1] batch 727/787 loss=0.886428 acc=0.5775 samples/s=1.35
+[Epoch 1] batch 728/787 loss=0.886057 acc=0.5775 samples/s=1.35
+[Epoch 1] batch 729/787 loss=0.885640 acc=0.5777 samples/s=1.35
+[Epoch 1] batch 730/787 loss=0.885179 acc=0.5779 samples/s=1.35
+[Epoch 1] batch 731/787 loss=0.884711 acc=0.5781 samples/s=1.35
+[Epoch 1] batch 732/787 loss=0.884237 acc=0.5783 samples/s=1.35
+[Epoch 1] batch 733/787 loss=0.884057 acc=0.5784 samples/s=1.35
+[Epoch 1] batch 734/787 loss=0.883805 acc=0.5784 samples/s=1.35
+[Epoch 1] batch 735/787 loss=0.883469 acc=0.5785 samples/s=1.35
+[Epoch 1] batch 736/787 loss=0.883622 acc=0.5783 samples/s=1.35
+[Epoch 1] batch 737/787 loss=0.883024 acc=0.5786 samples/s=1.35
+[Epoch 1] batch 738/787 loss=0.882825 acc=0.5785 samples/s=1.35
+[Epoch 1] batch 739/787 loss=0.882294 acc=0.5787 samples/s=1.35
+[Epoch 1] batch 740/787 loss=0.882001 acc=0.5789 samples/s=1.35
+[Epoch 1] batch 741/787 loss=0.881703 acc=0.5790 samples/s=1.35
+[Epoch 1] batch 742/787 loss=0.881232 acc=0.5793 samples/s=1.35
+[Epoch 1] batch 743/787 loss=0.880913 acc=0.5793 samples/s=1.35
+[Epoch 1] batch 744/787 loss=0.880564 acc=0.5796 samples/s=1.35
+[Epoch 1] batch 745/787 loss=0.880312 acc=0.5798 samples/s=1.35
+[Epoch 1] batch 746/787 loss=0.880332 acc=0.5798 samples/s=1.35
+[Epoch 1] batch 747/787 loss=0.879871 acc=0.5800 samples/s=1.35
+[Epoch 1] batch 748/787 loss=0.879554 acc=0.5802 samples/s=1.35
+[Epoch 1] batch 749/787 loss=0.879301 acc=0.5803 samples/s=1.35
+[Epoch 1] batch 750/787 loss=0.879235 acc=0.5803 samples/s=1.35
+[Epoch 1] batch 751/787 loss=0.878886 acc=0.5804 samples/s=1.35
+[Epoch 1] batch 752/787 loss=0.878687 acc=0.5806 samples/s=1.35
+[Epoch 1] batch 753/787 loss=0.878307 acc=0.5808 samples/s=1.35
+[Epoch 1] batch 754/787 loss=0.877846 acc=0.5809 samples/s=1.35
+[Epoch 1] batch 755/787 loss=0.877234 acc=0.5812 samples/s=1.35
+[Epoch 1] batch 756/787 loss=0.877081 acc=0.5812 samples/s=1.35
+[Epoch 1] batch 757/787 loss=0.876942 acc=0.5811 samples/s=1.35
+[Epoch 1] batch 758/787 loss=0.876414 acc=0.5813 samples/s=1.35
+[Epoch 1] batch 759/787 loss=0.875977 acc=0.5815 samples/s=1.35
+[Epoch 1] batch 760/787 loss=0.875698 acc=0.5815 samples/s=1.35
+[Epoch 1] batch 761/787 loss=0.875335 acc=0.5816 samples/s=1.35
+[Epoch 1] batch 762/787 loss=0.874903 acc=0.5817 samples/s=1.35
+[Epoch 1] batch 763/787 loss=0.874342 acc=0.5820 samples/s=1.35
+[Epoch 1] batch 764/787 loss=0.873945 acc=0.5822 samples/s=1.35
+[Epoch 1] batch 765/787 loss=0.873410 acc=0.5824 samples/s=1.35
+[Epoch 1] batch 766/787 loss=0.873250 acc=0.5825 samples/s=1.35
+[Epoch 1] batch 767/787 loss=0.872801 acc=0.5827 samples/s=1.35
+[Epoch 1] batch 768/787 loss=0.872386 acc=0.5828 samples/s=1.35
+[Epoch 1] batch 769/787 loss=0.871931 acc=0.5830 samples/s=1.35
+[Epoch 1] batch 770/787 loss=0.871688 acc=0.5831 samples/s=1.35
+[Epoch 1] batch 771/787 loss=0.871337 acc=0.5833 samples/s=1.35
+[Epoch 1] batch 772/787 loss=0.870891 acc=0.5834 samples/s=1.35
+[Epoch 1] batch 773/787 loss=0.870523 acc=0.5836 samples/s=1.35
+[Epoch 1] batch 774/787 loss=0.870092 acc=0.5837 samples/s=1.35
+[Epoch 1] batch 775/787 loss=0.869815 acc=0.5838 samples/s=1.35
+[Epoch 1] batch 776/787 loss=0.869239 acc=0.5842 samples/s=1.35
+[Epoch 1] batch 777/787 loss=0.869097 acc=0.5843 samples/s=1.35
+[Epoch 1] batch 778/787 loss=0.868788 acc=0.5844 samples/s=1.35
+[Epoch 1] batch 779/787 loss=0.868421 acc=0.5846 samples/s=1.35
+[Epoch 1] batch 780/787 loss=0.868020 acc=0.5847 samples/s=1.35
+[Epoch 1] batch 781/787 loss=0.867854 acc=0.5848 samples/s=1.35
+[Epoch 1] batch 782/787 loss=0.867543 acc=0.5849 samples/s=1.35
+[Epoch 1] batch 783/787 loss=0.867456 acc=0.5848 samples/s=1.35
+[Epoch 1] batch 784/787 loss=0.866931 acc=0.5851 samples/s=1.35
+[Epoch 1] batch 785/787 loss=0.866721 acc=0.5851 samples/s=1.35
+[Epoch 1] batch 786/787 loss=0.866398 acc=0.5852 samples/s=1.35
+[Epoch 1] batch 787/787 loss=0.866233 acc=0.5852 samples/s=1.35
+Epoch 1 finished: total_loss=21815.221995, total_correct=14737
+Epoch 1 finished: total_loss=22043.276042, total_correct=14618
+Epoch 2 finished: total_loss=15751.957310, total_correct=16959
+Epoch 3 finished: total_loss=15130.038746, total_correct=17154
+Epoch 4 finished: total_loss=14718.912270, total_correct=17296
+Epoch 5 finished: total_loss=14401.172441, total_correct=17618
+Epoch 6 finished: total_loss=14782.882781, total_correct=17331
+Epoch 7 finished: total_loss=14787.418730, total_correct=17317
+Epoch 8 finished: total_loss=14828.306897, total_correct=17352
+Epoch 9 finished: total_loss=13745.350602, total_correct=18074
+Epoch 10 finished: total_loss=13582.105205, total_correct=18311
+Epoch 11 finished: total_loss=13554.298804, total_correct=18276
+Epoch 12 finished: total_loss=13511.826030, total_correct=18385
+Epoch 13 finished: total_loss=13478.321961, total_correct=18483
+Epoch 14 finished: total_loss=13417.597034, total_correct=18528
+Epoch 15 finished: total_loss=13470.703682, total_correct=18475
+Epoch 16 finished: total_loss=13431.337503, total_correct=18585
+Epoch 17 finished: total_loss=13152.333139, total_correct=19031
+Epoch 18 finished: total_loss=13149.221015, total_correct=19087
+Epoch 19 finished: total_loss=13131.273504, total_correct=19041
+Epoch 20 finished: total_loss=13150.838395, total_correct=19028
+Epoch 21 finished: total_loss=13231.703289, total_correct=19048
+Epoch 22 finished: total_loss=13202.001652, total_correct=19021
+Epoch 23 finished: total_loss=13200.494124, total_correct=18983
+Epoch 24 finished: total_loss=13249.367397, total_correct=18985
+Epoch 25 finished: total_loss=13230.262652, total_correct=19049
+Epoch 26 finished: total_loss=13151.554608, total_correct=19021
+Epoch 27 finished: total_loss=13239.975306, total_correct=18960
+Epoch 28 finished: total_loss=13179.940556, total_correct=19094
+Epoch 29 finished: total_loss=13147.484402, total_correct=19138
+Epoch 30 finished: total_loss=13003.277578, total_correct=19177
+Epoch 31 finished: total_loss=13026.885076, total_correct=19154
+Epoch 32 finished: total_loss=13019.604374, total_correct=19106
+Epoch 33 finished: total_loss=13019.809988, total_correct=19127
+Epoch 34 finished: total_loss=13057.567237, total_correct=18988
+Epoch 35 finished: total_loss=13084.710887, total_correct=19069
+Epoch 36 finished: total_loss=13083.371746, total_correct=18989
+Epoch 37 finished: total_loss=13078.112735, total_correct=18990
+Epoch 38 finished: total_loss=13092.750475, total_correct=18939
+Epoch 39 finished: total_loss=13043.615423, total_correct=19152
+Epoch 40 finished: total_loss=13063.968219, total_correct=19145
+Epoch 41 finished: total_loss=13076.857758, total_correct=19023
+Epoch 42 finished: total_loss=13064.188263, total_correct=19060
+Epoch 43 finished: total_loss=13076.495223, total_correct=18929
+Epoch 44 finished: total_loss=13103.663042, total_correct=18968
+Epoch 45 finished: total_loss=13054.438478, total_correct=19040
+Epoch 46 finished: total_loss=13067.213892, total_correct=18943
+Epoch 47 finished: total_loss=13071.182720, total_correct=19031
+Epoch 48 finished: total_loss=13067.856369, total_correct=19075
+Epoch 49 finished: total_loss=13063.650361, total_correct=18998
+Epoch 50 finished: total_loss=13074.820918, total_correct=19018
+Epoch 51 finished: total_loss=13074.736301, total_correct=18977
+Epoch 52 finished: total_loss=13068.087939, total_correct=18944
+Epoch 53 finished: total_loss=13102.816064, total_correct=18986
+Epoch 54 finished: total_loss=13078.001679, total_correct=19022
+Epoch 55 finished: total_loss=13080.354680, total_correct=18990
+Epoch 56 finished: total_loss=13086.183867, total_correct=18989
+Epoch 57 finished: total_loss=13092.612131, total_correct=19041
+Epoch 1 finished: total_loss=28107.579675, total_correct=13024
+Epoch 1 finished: total_loss=28107.579675, total_correct=13024
+Epoch 2 finished: total_loss=21289.656946, total_correct=15517
+Epoch 3 finished: total_loss=18380.232898, total_correct=16553
+Epoch 4 finished: total_loss=16227.882833, total_correct=17117
+Epoch 5 finished: total_loss=15957.184531, total_correct=17233
+Epoch 6 finished: total_loss=15782.181329, total_correct=17497
+Epoch 7 finished: total_loss=15835.337226, total_correct=17475
+Epoch 8 finished: total_loss=15502.884692, total_correct=17740
+Epoch 9 finished: total_loss=16195.755636, total_correct=17592
+Epoch 10 finished: total_loss=16630.203368, total_correct=17727
+Epoch 11 finished: total_loss=16296.701667, total_correct=17825
+Epoch 12 finished: total_loss=15438.486245, total_correct=17890
+Epoch 13 finished: total_loss=15622.552431, total_correct=18011
+Epoch 14 finished: total_loss=15527.311274, total_correct=18655
+Epoch 15 finished: total_loss=15395.208651, total_correct=18699
+Epoch 16 finished: total_loss=15288.365669, total_correct=18767
+Epoch 17 finished: total_loss=15329.831233, total_correct=18702
+Epoch 18 finished: total_loss=15300.449444, total_correct=18722
+Epoch 19 finished: total_loss=15302.017522, total_correct=18674
+Epoch 20 finished: total_loss=15145.795112, total_correct=18987
+Epoch 21 finished: total_loss=15141.388117, total_correct=19027
+Epoch 22 finished: total_loss=15244.000109, total_correct=18848
+Epoch 23 finished: total_loss=15177.723734, total_correct=19024
+Epoch 24 finished: total_loss=15237.027871, total_correct=18888
+Epoch 25 finished: total_loss=15266.590586, total_correct=18936
+Epoch 26 finished: total_loss=15080.908006, total_correct=19100
+Epoch 27 finished: total_loss=15173.660909, total_correct=19015
+Epoch 28 finished: total_loss=15231.232320, total_correct=18953
+Epoch 29 finished: total_loss=15179.789129, total_correct=18996
+Epoch 30 finished: total_loss=15202.636453, total_correct=18972
+Epoch 31 finished: total_loss=15211.606629, total_correct=19015
+Epoch 32 finished: total_loss=15172.968374, total_correct=18935
+Epoch 33 finished: total_loss=15171.695816, total_correct=19003
+Epoch 34 finished: total_loss=15174.849517, total_correct=18953
+Epoch 35 finished: total_loss=15136.013223, total_correct=19049
+Epoch 36 finished: total_loss=15229.736641, total_correct=19042
+Epoch 37 finished: total_loss=15194.126237, total_correct=18944
+Epoch 38 finished: total_loss=15209.725239, total_correct=18929
+Epoch 39 finished: total_loss=15230.567273, total_correct=18892
+Epoch 40 finished: total_loss=15211.627768, total_correct=18963
+Epoch 41 finished: total_loss=15216.133654, total_correct=18904
+Epoch 42 finished: total_loss=15209.733994, total_correct=18976
+Epoch 43 finished: total_loss=15191.594382, total_correct=19021
+Epoch 44 finished: total_loss=15230.372286, total_correct=18896
+Epoch 45 finished: total_loss=15268.741404, total_correct=18918
+Epoch 46 finished: total_loss=15198.988194, total_correct=18862
+Epoch 47 finished: total_loss=15171.610461, total_correct=18979
+Epoch 48 finished: total_loss=15183.920359, total_correct=18963
+Epoch 49 finished: total_loss=15164.940070, total_correct=19036
+Epoch 50 finished: total_loss=15148.931613, total_correct=18942
+Epoch 51 finished: total_loss=15205.788426, total_correct=18947
+Epoch 52 finished: total_loss=15175.357960, total_correct=18998
+Epoch 53 finished: total_loss=15248.335580, total_correct=18918
+Epoch 54 finished: total_loss=15242.411033, total_correct=18849
+Epoch 55 finished: total_loss=15226.586603, total_correct=18901
+Epoch 56 finished: total_loss=15189.554487, total_correct=18983
+Epoch 57 finished: total_loss=15219.518173, total_correct=18949
+Epoch 58 finished: total_loss=15183.172870, total_correct=19002
+Epoch 59 finished: total_loss=15219.522616, total_correct=18969
+Epoch 60 finished: total_loss=15248.266759, total_correct=18930
+Epoch 61 finished: total_loss=15176.204314, total_correct=18965
+Epoch 62 finished: total_loss=15196.364548, total_correct=18955
+Epoch 63 finished: total_loss=15146.698868, total_correct=19069
+Epoch 64 finished: total_loss=15222.493815, total_correct=18925
+Epoch 65 finished: total_loss=15178.313588, total_correct=18910
+Epoch 66 finished: total_loss=15157.995576, total_correct=18874
+Epoch 67 finished: total_loss=15158.087873, total_correct=18858
+Epoch 68 finished: total_loss=15242.936933, total_correct=18842
+Epoch 69 finished: total_loss=15156.641675, total_correct=18907

@@ -1,0 +1,187 @@
+/usr/bin/python3.12 /home/phdvu/Desktop/work/ihpc-may-2026/2.MultimodalTLN-WiFI6/1.Multimodal-Threshold-Logic-Network-HierarchicalConv/1.MTLN-AutoTau-kernel8-6bits/main_multi_TLN.py
+----------------------------------------------------------------------------
+2026-05-23 10:25:25.425954
+device: cuda
+
+Command used to run this script:
+PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python3 main_multi_TLN.py --dataset ofdm -bs 32 -nb 6 -ne 100 -k 8 -t Auto-calculated
+{'experiment_id': None, 'dataset': 'ofdm', 'tau': 'Auto-calculated', 'seed': 2017, 'batch_size': 32, 'learning_rate': 0.01, 'training_bit_count': 32, 'num_bits': 6, 'implementation': 'cuda', 'num_epochs': 100, 'log_interval': 0, 'architecture': 'threshold_connected', 'num_kernels': 8, 'num_layers': None, 'num_active': 6, 'grad_factor': 2.0, 'save_dir': 'weights3/chckpts', 'save_best_name': None, 'run_logic_pipeline': False, 'preprocessed_cache_dir': '/home/phdvu/Desktop/work/ihpc-may-2026/2.MultimodalTLN-WiFI6/1.Multimodal-Threshold-Logic-Network-HierarchicalConv/1.MTLN-AutoTau-kernel8-6bits/./../'}
+Using num_bits=6 -> input channels=12
+Loading: ../../../1.WirelessTopic/datasets/wifi-15db-N-2x225x339.npz
+x_train: torch.Size([8400, 2, 256, 339])
+y_train: torch.Size([8400])
+Loaded train data: torch.Size([8400, 2, 256, 339]), val data: torch.Size([1224, 2, 256, 339]), test data: torch.Size([2376, 2, 256, 339])
+Fitting 6-bit distributive thermometer on train data...
+Binarizing train, val, and test data...
+x_train_bits: torch.Size([8400, 2, 256, 339, 6])
+x_train_bin: torch.Size([8400, 12, 256, 339])
+Number of branches: 6
+Branch 0 shape: torch.Size([8400, 2, 256, 339])
+Branch 1 shape: torch.Size([8400, 2, 256, 339])
+Branch 2 shape: torch.Size([8400, 2, 256, 339])
+Branch 3 shape: torch.Size([8400, 2, 256, 339])
+Branch 4 shape: torch.Size([8400, 2, 256, 339])
+Branch 5 shape: torch.Size([8400, 2, 256, 339])
+flatten_dim: 86016
+------------>auto_tau: 37
+total_num_neurons=9078
+total_num_weights=64218
+model is on: cuda:0
+CustomModel(
+  (model): Sequential(
+    (0): MultiBranchFusion(
+      (branches): ModuleList(
+        (0-5): 6 x Sequential(
+          (0): SparseHierarchicalChannelLockedConv(
+            (branch1): SparseThresholdLinear()
+            (branch2): SparseThresholdLinear()
+          )
+          (1): StepGateClippedSTE(scale=1.0 w=1.0)
+          (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+          (3): SparseChannelLockedConv(
+            (gatebank): SparseThresholdLinear()
+          )
+          (4): StepGateClippedSTE(scale=1.0 w=1.0)
+          (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+        )
+      )
+    )
+    (1): SparseChannelLockedConv(
+      (gatebank): SparseThresholdLinear()
+    )
+    (2): StepGateClippedSTE(scale=1.0 w=1.0)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): SparseChannelLockedConv(
+      (gatebank): SparseThresholdLinear()
+    )
+    (5): StepGateClippedSTE(scale=1.0 w=1.0)
+    (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (7): Flatten(start_dim=1, end_dim=-1)
+    (8): ThresholdLayer(in_dim=86016, out_dim=8598, num_active=6, bias=True)
+    (9): StepGateClippedSTE(scale=1.0 w=1.0)
+    (10): GroupSum(k=6, tau=37)
+  )
+)
+Layer output shapes (batch size = 1):
+input: 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339
+(0) MultiBranchFusion: 96x64x84
+(1) SparseChannelLockedConv: 128x64x84
+(2) StepGateClippedSTE: 128x64x84
+(3) MaxPool2d: 128x32x42
+(4) SparseChannelLockedConv: 256x32x42
+(5) StepGateClippedSTE: 256x32x42
+(6) MaxPool2d: 256x16x21
+(7) Flatten: 86016
+(8) ThresholdLayer: 8598
+(9) StepGateClippedSTE: 8598
+(10) GroupSum: 6
+Epoch 1 finished: total_loss=10485.747705, total_correct=4006
+[CKPT] saved best at epoch 1 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=6_seed=2017.pt
+{'epoch': 1, 'train_loss': 1.250685556471803, 'train_acc': 0.47781488549618323, 'val_loss': 0.7455489877002691, 'val_acc': 0.6674836601307189, 'test acc': 0.6632996632996633, 'lr': 0.01}
+Epoch 2 finished: total_loss=5342.057432, total_correct=5574
+{'epoch': 2, 'train_loss': 0.6371728807460261, 'train_acc': 0.6648377862595419, 'val_loss': 0.6021377915650411, 'val_acc': 0.6658496732026143, 'test acc': 0.6675084175084175, 'lr': 0.01}
+Epoch 3 finished: total_loss=5246.157552, total_correct=5553
+[CKPT] saved best at epoch 3 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=6_seed=2017.pt
+{'epoch': 3, 'train_loss': 0.6257344408117178, 'train_acc': 0.6623330152671756, 'val_loss': 0.6451030883913725, 'val_acc': 0.6977124183006536, 'test acc': 0.6847643097643098, 'lr': 0.01}
+Epoch 4 finished: total_loss=5343.599632, total_correct=5605
+{'epoch': 4, 'train_loss': 0.637356826367269, 'train_acc': 0.6685353053435115, 'val_loss': 0.5724971103512384, 'val_acc': 0.6805555555555556, 'test acc': 0.6978114478114478, 'lr': 0.01}
+Epoch 5 finished: total_loss=5098.955343, total_correct=5658
+{'epoch': 5, 'train_loss': 0.6081769254826407, 'train_acc': 0.6748568702290076, 'val_loss': 0.6437801052542294, 'val_acc': 0.670751633986928, 'test acc': 0.6691919191919192, 'lr': 0.01}
+Epoch 6 finished: total_loss=5038.435428, total_correct=5637
+{'epoch': 6, 'train_loss': 0.600958424101349, 'train_acc': 0.6723520992366412, 'val_loss': 0.6261517432780047, 'val_acc': 0.6854575163398693, 'test acc': 0.6868686868686869, 'lr': 0.01}
+Epoch 7 finished: total_loss=4906.547459, total_correct=5776
+{'epoch': 7, 'train_loss': 0.5852275117663027, 'train_acc': 0.6889312977099237, 'val_loss': 0.5606814794291078, 'val_acc': 0.6830065359477124, 'test acc': 0.6906565656565656, 'lr': 0.01}
+Epoch 8 finished: total_loss=4905.919043, total_correct=5785
+{'epoch': 8, 'train_loss': 0.5851525575605058, 'train_acc': 0.6900047709923665, 'val_loss': 0.5635775004337037, 'val_acc': 0.6887254901960784, 'test acc': 0.6965488215488216, 'lr': 0.01}
+Epoch 9 finished: total_loss=4837.729176, total_correct=5789
+{'epoch': 9, 'train_loss': 0.57701922418507, 'train_acc': 0.6904818702290076, 'val_loss': 0.57063705936756, 'val_acc': 0.6674836601307189, 'test acc': 0.6683501683501684, 'lr': 0.01}
+Epoch 10 finished: total_loss=4842.684854, total_correct=5817
+{'epoch': 10, 'train_loss': 0.5776103117311274, 'train_acc': 0.6938215648854962, 'val_loss': 0.6781736709713156, 'val_acc': 0.6617647058823529, 'test acc': 0.6527777777777778, 'lr': 0.01}
+Epoch 11 finished: total_loss=4861.239158, total_correct=5811
+{'epoch': 11, 'train_loss': 0.5798233728144915, 'train_acc': 0.6931059160305344, 'val_loss': 0.5619121630207385, 'val_acc': 0.6601307189542484, 'test acc': 0.6746632996632996, 'lr': 0.01}
+Epoch 12 finished: total_loss=4963.455612, total_correct=5733
+[CKPT] saved best at epoch 12 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=6_seed=2017.pt
+{'epoch': 12, 'train_loss': 0.5920152209187282, 'train_acc': 0.6838024809160306, 'val_loss': 0.5476586678448845, 'val_acc': 0.7140522875816994, 'test acc': 0.7142255892255892, 'lr': 0.01}
+Epoch 13 finished: total_loss=4749.370516, total_correct=5890
+{'epoch': 13, 'train_loss': 0.5664802619064128, 'train_acc': 0.7025286259541985, 'val_loss': 0.5817659267413071, 'val_acc': 0.6715686274509803, 'test acc': 0.6683501683501684, 'lr': 0.01}
+Epoch 14 finished: total_loss=4708.754017, total_correct=5962
+{'epoch': 14, 'train_loss': 0.5616357367457324, 'train_acc': 0.7111164122137404, 'val_loss': 0.5849519890118269, 'val_acc': 0.6764705882352942, 'test acc': 0.6759259259259259, 'lr': 0.01}
+Epoch 15 finished: total_loss=4650.906855, total_correct=5990
+{'epoch': 15, 'train_loss': 0.5547360275082915, 'train_acc': 0.714456106870229, 'val_loss': 0.5565861525878407, 'val_acc': 0.7116013071895425, 'test acc': 0.7045454545454546, 'lr': 0.01}
+Epoch 16 finished: total_loss=4722.509216, total_correct=5949
+{'epoch': 16, 'train_loss': 0.563276385476116, 'train_acc': 0.7095658396946565, 'val_loss': 0.5576294520322014, 'val_acc': 0.7034313725490197, 'test acc': 0.6961279461279462, 'lr': 0.01}
+Epoch 17 finished: total_loss=4622.581328, total_correct=6002
+{'epoch': 17, 'train_loss': 0.55135750577195, 'train_acc': 0.7158874045801527, 'val_loss': 0.5342991410517225, 'val_acc': 0.7009803921568627, 'test acc': 0.7011784511784511, 'lr': 0.01}
+Epoch 18 finished: total_loss=4582.653811, total_correct=5970
+{'epoch': 18, 'train_loss': 0.546595158809014, 'train_acc': 0.7120706106870229, 'val_loss': 0.5377607711779526, 'val_acc': 0.6879084967320261, 'test acc': 0.6868686868686869, 'lr': 0.01}
+Epoch 19 finished: total_loss=4718.983262, total_correct=5970
+{'epoch': 19, 'train_loss': 0.562855828013129, 'train_acc': 0.7120706106870229, 'val_loss': 0.6813001235326132, 'val_acc': 0.6666666666666666, 'test acc': 0.6666666666666666, 'lr': 0.01}
+Epoch 20 finished: total_loss=4696.527699, total_correct=6030
+[CKPT] saved best at epoch 20 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=6_seed=2017.pt
+{'epoch': 20, 'train_loss': 0.5601774449566849, 'train_acc': 0.7192270992366412, 'val_loss': 0.5298400677107518, 'val_acc': 0.7516339869281046, 'test acc': 0.7613636363636364, 'lr': 0.01}
+Epoch 21 finished: total_loss=4607.342845, total_correct=6050
+{'epoch': 21, 'train_loss': 0.5495399385690689, 'train_acc': 0.7216125954198473, 'val_loss': 0.5586169880200056, 'val_acc': 0.6928104575163399, 'test acc': 0.6902356902356902, 'lr': 0.01}
+Epoch 22 finished: total_loss=4598.835195, total_correct=6077
+{'epoch': 22, 'train_loss': 0.5485251901941445, 'train_acc': 0.7248330152671756, 'val_loss': 0.5509431327090544, 'val_acc': 0.7091503267973857, 'test acc': 0.7184343434343434, 'lr': 0.01}
+Epoch 23 finished: total_loss=4629.866903, total_correct=6127
+{'epoch': 23, 'train_loss': 0.5522264913293241, 'train_acc': 0.7307967557251909, 'val_loss': 0.5547568677297605, 'val_acc': 0.6887254901960784, 'test acc': 0.686026936026936, 'lr': 0.01}
+Epoch 24 finished: total_loss=4518.237947, total_correct=6154
+{'epoch': 24, 'train_loss': 0.5389119688108677, 'train_acc': 0.7340171755725191, 'val_loss': 0.5554299502590903, 'val_acc': 0.7083333333333334, 'test acc': 0.7074915824915825, 'lr': 0.01}
+Epoch 25 finished: total_loss=4609.117611, total_correct=6212
+[CKPT] saved best at epoch 25 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=6_seed=2017.pt
+{'epoch': 25, 'train_loss': 0.5497516234981195, 'train_acc': 0.7409351145038168, 'val_loss': 0.5271321067623064, 'val_acc': 0.7630718954248366, 'test acc': 0.7483164983164983, 'lr': 0.01}
+Epoch 26 finished: total_loss=4795.450806, total_correct=6108
+{'epoch': 26, 'train_loss': 0.5719764796832135, 'train_acc': 0.728530534351145, 'val_loss': 0.6778275257621715, 'val_acc': 0.7540849673202614, 'test acc': 0.7462121212121212, 'lr': 0.01}
+Epoch 27 finished: total_loss=4687.632152, total_correct=6201
+{'epoch': 27, 'train_loss': 0.5591164303531173, 'train_acc': 0.7396230916030534, 'val_loss': 0.5582508752548617, 'val_acc': 0.6993464052287581, 'test acc': 0.6936026936026936, 'lr': 0.01}
+Epoch 28 finished: total_loss=4522.018012, total_correct=6270
+{'epoch': 28, 'train_loss': 0.5393628354063471, 'train_acc': 0.7478530534351145, 'val_loss': 0.5403988271756889, 'val_acc': 0.6887254901960784, 'test acc': 0.6835016835016835, 'lr': 0.01}
+Epoch 29 finished: total_loss=4479.795526, total_correct=6312
+{'epoch': 29, 'train_loss': 0.5343267563872665, 'train_acc': 0.7528625954198473, 'val_loss': 0.7704534818923551, 'val_acc': 0.5449346405228758, 'test acc': 0.5404040404040404, 'lr': 0.01}
+Epoch 30 finished: total_loss=4632.163918, total_correct=6140
+{'epoch': 30, 'train_loss': 0.5525004673777646, 'train_acc': 0.7323473282442748, 'val_loss': 0.7909870989182416, 'val_acc': 0.5392156862745098, 'test acc': 0.5290404040404041, 'lr': 0.01}
+Epoch 31 finished: total_loss=4724.419132, total_correct=6191
+[LR] 0.01 -> 0.001
+{'epoch': 31, 'train_loss': 0.5635041903903466, 'train_acc': 0.7384303435114504, 'val_loss': 0.5690254487243354, 'val_acc': 0.6723856209150327, 'test acc': 0.6742424242424242, 'lr': 0.001}
+Epoch 32 finished: total_loss=4128.894380, total_correct=6608
+[CKPT] saved best at epoch 32 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=6_seed=2017.pt
+{'epoch': 32, 'train_loss': 0.49247308917172994, 'train_acc': 0.7881679389312977, 'val_loss': 0.5003072677874097, 'val_acc': 0.7883986928104575, 'test acc': 0.7777777777777778, 'lr': 0.001}
+Epoch 33 finished: total_loss=4049.135493, total_correct=6702
+[CKPT] saved best at epoch 33 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=6_seed=2017.pt
+{'epoch': 33, 'train_loss': 0.48295986322501233, 'train_acc': 0.7993797709923665, 'val_loss': 0.4839569867825976, 'val_acc': 0.7998366013071896, 'test acc': 0.7803030303030303, 'lr': 0.001}
+Epoch 34 finished: total_loss=4030.309611, total_correct=6718
+{'epoch': 34, 'train_loss': 0.48071440974719654, 'train_acc': 0.8012881679389313, 'val_loss': 0.4811526942097284, 'val_acc': 0.7949346405228758, 'test acc': 0.7824074074074074, 'lr': 0.001}
+Epoch 35 finished: total_loss=4010.061174, total_correct=6745
+{'epoch': 35, 'train_loss': 0.47829928129683924, 'train_acc': 0.8045085877862596, 'val_loss': 0.48780704713335227, 'val_acc': 0.7826797385620915, 'test acc': 0.7769360269360269, 'lr': 0.001}
+Epoch 36 finished: total_loss=4004.759251, total_correct=6720
+{'epoch': 36, 'train_loss': 0.4776668953531571, 'train_acc': 0.8015267175572519, 'val_loss': 0.4861517778409073, 'val_acc': 0.7843137254901961, 'test acc': 0.7853535353535354, 'lr': 0.001}
+Epoch 37 finished: total_loss=4008.146004, total_correct=6711
+{'epoch': 37, 'train_loss': 0.47807084968071856, 'train_acc': 0.8004532442748091, 'val_loss': 0.48615385582244475, 'val_acc': 0.7883986928104575, 'test acc': 0.7845117845117845, 'lr': 0.001}
+Epoch 38 finished: total_loss=3983.571511, total_correct=6646
+{'epoch': 38, 'train_loss': 0.4751397317261186, 'train_acc': 0.7927003816793893, 'val_loss': 0.47933508368099437, 'val_acc': 0.7859477124183006, 'test acc': 0.7887205387205387, 'lr': 0.001}
+Epoch 39 finished: total_loss=3953.984755, total_correct=6711
+[CKPT] saved best at epoch 39 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=6_seed=2017.pt
+{'epoch': 39, 'train_loss': 0.4716107770231844, 'train_acc': 0.8004532442748091, 'val_loss': 0.4793150927506241, 'val_acc': 0.803921568627451, 'test acc': 0.7845117845117845, 'lr': 0.001}
+Epoch 40 finished: total_loss=3967.044771, total_correct=6648
+{'epoch': 40, 'train_loss': 0.47316850801460614, 'train_acc': 0.7929389312977099, 'val_loss': 0.5053600478016473, 'val_acc': 0.7066993464052288, 'test acc': 0.7108585858585859, 'lr': 0.001}
+Epoch 41 finished: total_loss=3955.150274, total_correct=6633
+{'epoch': 41, 'train_loss': 0.4717497941646867, 'train_acc': 0.7911498091603053, 'val_loss': 0.48611318363862877, 'val_acc': 0.7704248366013072, 'test acc': 0.7651515151515151, 'lr': 0.001}
+Epoch 42 finished: total_loss=3958.884291, total_correct=6660
+{'epoch': 42, 'train_loss': 0.47219516826039964, 'train_acc': 0.7943702290076335, 'val_loss': 0.4827372310987485, 'val_acc': 0.7761437908496732, 'test acc': 0.7727272727272727, 'lr': 0.001}
+Epoch 43 finished: total_loss=3938.667138, total_correct=6698
+{'epoch': 43, 'train_loss': 0.4697837712428042, 'train_acc': 0.7989026717557252, 'val_loss': 0.47772422257591696, 'val_acc': 0.7990196078431373, 'test acc': 0.7824074074074074, 'lr': 0.001}
+Epoch 44 finished: total_loss=3934.654389, total_correct=6698
+{'epoch': 44, 'train_loss': 0.4693051514052253, 'train_acc': 0.7989026717557252, 'val_loss': 0.47310130580577975, 'val_acc': 0.803921568627451, 'test acc': 0.7925084175084175, 'lr': 0.001}
+Epoch 45 finished: total_loss=3928.279189, total_correct=6735
+{'epoch': 45, 'train_loss': 0.46854475055259603, 'train_acc': 0.8033158396946565, 'val_loss': 0.4781257155673956, 'val_acc': 0.7867647058823529, 'test acc': 0.7664141414141414, 'lr': 0.001}
+Epoch 46 finished: total_loss=3930.017374, total_correct=6690
+{'epoch': 46, 'train_loss': 0.46875207228514987, 'train_acc': 0.7979484732824428, 'val_loss': 0.5325161717296426, 'val_acc': 0.7516339869281046, 'test acc': 0.7327441077441077, 'lr': 0.001}
+Epoch 47 finished: total_loss=3984.649306, total_correct=6606
+{'epoch': 47, 'train_loss': 0.47526828552247913, 'train_acc': 0.7879293893129771, 'val_loss': 0.47070588707144745, 'val_acc': 0.8031045751633987, 'test acc': 0.7870370370370371, 'lr': 0.001}
+Epoch 48 finished: total_loss=3969.082014, total_correct=6617
+{'epoch': 48, 'train_loss': 0.473411499771453, 'train_acc': 0.7892414122137404, 'val_loss': 0.47192202635060726, 'val_acc': 0.798202614379085, 'test acc': 0.7803030303030303, 'lr': 0.001}
+Epoch 49 finished: total_loss=3980.516267, total_correct=6597
+{'epoch': 49, 'train_loss': 0.4747753180847823, 'train_acc': 0.7868559160305344, 'val_loss': 0.49496562184851156, 'val_acc': 0.7295751633986928, 'test acc': 0.7192760942760943, 'lr': 0.001}
+Epoch 50 finished: total_loss=3985.876401, total_correct=6630
+[CKPT] saved best at epoch 50 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=6_seed=2017.pt
+{'epoch': 50, 'train_loss': 0.4754146470595862, 'train_acc': 0.7907919847328244, 'val_loss': 0.4727669794575062, 'val_acc': 0.8080065359477124, 'test acc': 0.7861952861952862, 'lr': 0.001}
