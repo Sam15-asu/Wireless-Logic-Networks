@@ -188,12 +188,12 @@ def load_dataset(args):
     class_names = ['BPSK', 'QPSK', 'QAM16', 'QAM64', 'QAM256', 'QAM1024']
     
     # Path to wireless data directory
-    npy_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'wireless_data'))
+    npy_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'wireless_data', '15dB'))
 
     # Check if data exists, if not, attempt to download it automatically.
-    if not os.path.isdir(npy_dir) or not any(os.path.isdir(os.path.join(npy_dir, c)) for c in class_names):
+    if not os.path.isdir(npy_dir) or not all(os.path.isdir(os.path.join(npy_dir, c)) for c in class_names):
         print(f"Data not found at {npy_dir}. Attempting to download from Hugging Face...")
-        hf_token = os.getenv('HF_TOKEN')
+        hf_token = args.hf_token if args.hf_token else os.getenv('HF_TOKEN')
         try:
             snapshot_download(
                 repo_id='Sam10Man/Wireless',
@@ -962,12 +962,12 @@ if __name__ == '__main__':
         action='store_true',
         help='after training, run checkpoint export -> csv -> truth table -> minimized expressions -> verilog on the best checkpoint',
     )
-    parser.add_argument(
-        '--preprocessed-cache-dir',
+    parser.add_argument('--preprocessed-cache-dir',
         type=str,
         default=os.path.join(os.path.dirname(__file__), './../'),
         help='directory used to store and reuse cached binarized datasets',
     )
+    parser.add_argument('--hf_token', type=str, default=None, help='Hugging Face API token')
 
     args = parser.parse_args()
     if args.num_bits < 1:
@@ -987,6 +987,9 @@ if __name__ == '__main__':
         f"-k {args.num_kernels} "
         f"-t {args.tau}"
     )
+    if args.hf_token:
+        command_str += f" --hf_token {args.hf_token}"
+    
     print("\nCommand used to run this script:")
     print(command_str)
 

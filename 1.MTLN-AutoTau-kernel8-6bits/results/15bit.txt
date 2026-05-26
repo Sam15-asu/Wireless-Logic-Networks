@@ -1,0 +1,67 @@
+----------------------------------------------------------------------------
+2026-05-26 14:27:44.361504
+device: cuda
+
+Command used to run this script:
+PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python3 main_multi_TLN_HG_memmap.py --dataset ofdm -bs 32 -nb 15 -ne 50 -k 8 -t Auto-calculated --hf_token
+{'experiment_id': None, 'dataset': 'ofdm', 'tau': 'Auto-calculated', 'seed': 2017, 'batch_size': 32, 'learning_rate': 0.01, 'training_bit_count': 32, 'num_bits': 15, 'implementation': 'cuda', 'num_epochs': 50, 'log_interval': 0, 'architecture': 'threshold_connected', 'num_kernels': 8, 'num_layers': None, 'num_active': 6, 'grad_factor': 2.0, 'save_dir': 'weights3/chckpts', 'save_best_name': None, 'run_logic_pipeline': False, 'preprocessed_cache_dir': '/workspace/1.MTLN-AutoTau-kernel8-6bits/./../', 'hf_token': '<HF_TOKEN>'}
+Using num_bits=15 -> input channels=30
+Identifying OFDM dataset files...
+Total samples: train=25199, val=3599, test=7201
+Fitting 15-bit distributive thermometer on subset (600 samples)...
+Calculating thresholds using quantiles...
+Initializing On-The-Fly Binarization Datasets...
+Creating DataLoaders with 4 workers...
+flatten_dim: 86016
+------------>auto_tau: 37
+total_num_neurons=9342
+total_num_weights=66234
+model is on: cuda:0
+CustomModel(
+  (model): Sequential(
+    (0): MultiBranchFusion(
+      (branches): ModuleList(
+        (0-14): 15 x Sequential(
+          (0): SparseHierarchicalChannelLockedConv(
+            (branch1): SparseThresholdLinear()
+            (branch2): SparseThresholdLinear()
+          )
+          (1): StepGateClippedSTE(scale=1.0 w=1.0)
+          (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+          (3): SparseChannelLockedConv(
+            (gatebank): SparseThresholdLinear()
+          )
+          (4): StepGateClippedSTE(scale=1.0 w=1.0)
+          (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+        )
+      )
+    )
+    (1): SparseChannelLockedConv(
+      (gatebank): SparseThresholdLinear()
+    )
+    (2): StepGateClippedSTE(scale=1.0 w=1.0)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): SparseChannelLockedConv(
+      (gatebank): SparseThresholdLinear()
+    )
+    (5): StepGateClippedSTE(scale=1.0 w=1.0)
+    (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (7): Flatten(start_dim=1, end_dim=-1)
+    (8): ThresholdLayer(in_dim=86016, out_dim=8598, num_active=6, bias=True)
+    (9): StepGateClippedSTE(scale=1.0 w=1.0)
+    (10): GroupSum(k=6, tau=37)
+  )
+)
+Layer output shapes (batch size = 1):
+input: 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339
+(0) MultiBranchFusion: 240x64x84
+(1) SparseChannelLockedConv: 128x64x84
+(2) StepGateClippedSTE: 128x64x84
+(3) MaxPool2d: 128x32x42
+(4) SparseChannelLockedConv: 256x32x42
+(5) StepGateClippedSTE: 256x32x42
+(6) MaxPool2d: 256x16x21
+(7) Flatten: 86016
+(8) ThresholdLayer: 8598
+(9) StepGateClippedSTE: 8598
+(10) GroupSum: 6

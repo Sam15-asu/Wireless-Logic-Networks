@@ -37,7 +37,7 @@ class Thermometer:
         self.thresholds = self.get_thresholds(x)
         return self
     
-    def binarize(self, x):
+    def binarize(self, x, verbose=True):
         if self.thresholds is None:
             raise RuntimeError("need to fit before calling apply")
         if type(x) is not torch.Tensor:
@@ -52,7 +52,8 @@ class Thermometer:
             bits = self.thresholds.shape[0]
             out_shape = (N, bits)
             
-        print(f"Binarizing {N} samples into {bits} bits...")
+        if verbose:
+            print(f"Binarizing {N} samples into {bits} bits...")
         out = torch.empty(out_shape, dtype=torch.bool)
         
         chunk_size = 500
@@ -60,7 +61,7 @@ class Thermometer:
             end = min(i + chunk_size, N)
             x_chunk = x[i:end].unsqueeze(-1)
             out[i:end] = (x_chunk > self.thresholds)
-            if i % 1000 == 0:
+            if verbose and i % 1000 == 0:
                 print(f"  Binarized {i}/{N}...")
         
         return out

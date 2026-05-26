@@ -1,0 +1,178 @@
+----------------------------------------------------------------------------
+2026-05-26 00:42:16.038646
+device: cuda
+
+Command used to run this script:
+PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python3 main_multi_TLN_HG_memmap.py --dataset ofdm -bs 32 -nb 15 -ne 50 -k 8 -t Auto-calculated --hf_token 
+{'experiment_id': None, 'dataset': 'ofdm', 'tau': 'Auto-calculated', 'seed': 2017, 'batch_size': 32, 'learning_rate': 0.01, 'training_bit_count': 32, 'num_bits': 15, 'implementation': 'cuda', 'num_epochs': 50, 'log_interval': 0, 'architecture': 'threshold_connected', 'num_kernels': 8, 'num_layers': None, 'num_active': 6, 'grad_factor': 2.0, 'save_dir': 'weights3/chckpts', 'save_best_name': None, 'run_logic_pipeline': False, 'preprocessed_cache_dir': '/workspace/1.MTLN-AutoTau-kernel8-6bits/./../', 'hf_token': '<HF_TOKEN>'}
+Using num_bits=15 -> input channels=30
+Identifying OFDM dataset files...
+Total samples: train=25199, val=3599, test=7201
+Fitting 15-bit distributive thermometer on subset (600 samples)...
+Calculating thresholds using quantiles...
+Initializing On-The-Fly Binarization Datasets...
+Creating DataLoaders with 4 workers...
+flatten_dim: 86016
+------------>auto_tau: 37
+total_num_neurons=9342
+total_num_weights=66234
+model is on: cuda:0
+CustomModel(
+  (model): Sequential(
+    (0): MultiBranchFusion(
+      (branches): ModuleList(
+        (0-14): 15 x Sequential(
+          (0): SparseHierarchicalChannelLockedConv(
+            (branch1): SparseThresholdLinear()
+            (branch2): SparseThresholdLinear()
+          )
+          (1): StepGateClippedSTE(scale=1.0 w=1.0)
+          (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+          (3): SparseChannelLockedConv(
+            (gatebank): SparseThresholdLinear()
+          )
+          (4): StepGateClippedSTE(scale=1.0 w=1.0)
+          (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+        )
+      )
+    )
+    (1): SparseChannelLockedConv(
+      (gatebank): SparseThresholdLinear()
+    )
+    (2): StepGateClippedSTE(scale=1.0 w=1.0)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): SparseChannelLockedConv(
+      (gatebank): SparseThresholdLinear()
+    )
+    (5): StepGateClippedSTE(scale=1.0 w=1.0)
+    (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (7): Flatten(start_dim=1, end_dim=-1)
+    (8): ThresholdLayer(in_dim=86016, out_dim=8598, num_active=6, bias=True)
+    (9): StepGateClippedSTE(scale=1.0 w=1.0)
+    (10): GroupSum(k=6, tau=37)
+  )
+)
+Layer output shapes (batch size = 1):
+input: 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339 | 2x256x339
+(0) MultiBranchFusion: 240x64x84
+(1) SparseChannelLockedConv: 128x64x84
+(2) StepGateClippedSTE: 128x64x84
+(3) MaxPool2d: 128x32x42
+(4) SparseChannelLockedConv: 256x32x42
+(5) StepGateClippedSTE: 256x32x42
+(6) MaxPool2d: 256x16x21
+(7) Flatten: 86016
+(8) ThresholdLayer: 8598
+(9) StepGateClippedSTE: 8598
+(10) GroupSum: 6
+Epoch 1 finished: total_loss=24128.210760, total_correct=13786
+[CKPT] saved best at epoch 1 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=15_seed=2017.pt
+{'epoch': 1, 'train_loss': 0.9580769838038666, 'train_acc': 0.5474110546378653, 'val_loss': 0.6407699791694365, 'val_acc': 0.667129758266185, 'test acc': 0.66851826135259, 'lr': 0.01}
+Epoch 2 finished: total_loss=15486.150630, total_correct=16971
+[CKPT] saved best at epoch 2 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=15_seed=2017.pt
+{'epoch': 2, 'train_loss': 0.6149202124363585, 'train_acc': 0.6738802414231257, 'val_loss': 0.677607641158153, 'val_acc': 0.6676854681856071, 'test acc': 0.6699069573670323, 'lr': 0.01}
+Epoch 3 finished: total_loss=15038.612889, total_correct=17294
+[CKPT] saved best at epoch 3 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=15_seed=2017.pt
+{'epoch': 3, 'train_loss': 0.5971494952862871, 'train_acc': 0.6867058449809402, 'val_loss': 0.581994511122901, 'val_acc': 0.7135315365379272, 'test acc': 0.7212887099014026, 'lr': 0.01}
+Epoch 4 finished: total_loss=15068.134703, total_correct=17422
+[CKPT] saved best at epoch 4 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=15_seed=2017.pt
+{'epoch': 4, 'train_loss': 0.5983217401001626, 'train_acc': 0.6917884371029225, 'val_loss': 0.539533734696297, 'val_acc': 0.7413170325090302, 'test acc': 0.7435078461324816, 'lr': 0.01}
+Epoch 5 finished: total_loss=14277.130958, total_correct=17954
+{'epoch': 5, 'train_loss': 0.566912760406619, 'train_acc': 0.712912960609911, 'val_loss': 0.54978052373105, 'val_acc': 0.7257571547652125, 'test acc': 0.7235106235245105, 'lr': 0.01}
+Epoch 6 finished: total_loss=14347.552106, total_correct=17896
+{'epoch': 6, 'train_loss': 0.5697090258062113, 'train_acc': 0.7106099110546379, 'val_loss': 0.5623660392812903, 'val_acc': 0.7374270630730758, 'test acc': 0.7490626301902513, 'lr': 0.01}
+Epoch 7 finished: total_loss=14716.771754, total_correct=17846
+{'epoch': 7, 'train_loss': 0.5843699076502872, 'train_acc': 0.7086245235069886, 'val_loss': 0.5971065609757024, 'val_acc': 0.7235343150875243, 'test acc': 0.7294820163866129, 'lr': 0.01}
+Epoch 8 finished: total_loss=15125.326101, total_correct=17666
+[CKPT] saved best at epoch 8 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=15_seed=2017.pt
+{'epoch': 8, 'train_loss': 0.6005926819132426, 'train_acc': 0.7014771283354511, 'val_loss': 0.5675453941303348, 'val_acc': 0.7535426507363157, 'test acc': 0.7479516733786974, 'lr': 0.01}
+Epoch 9 finished: total_loss=15164.035501, total_correct=17756
+{'epoch': 9, 'train_loss': 0.6021297451350104, 'train_acc': 0.7050508259212198, 'val_loss': 0.6127136974789825, 'val_acc': 0.7088080022228397, 'test acc': 0.7014303568948758, 'lr': 0.01}
+Epoch 10 finished: total_loss=14989.136010, total_correct=17798
+[LR] 0.01 -> 0.001
+{'epoch': 10, 'train_loss': 0.5951848796922643, 'train_acc': 0.7067185514612452, 'val_loss': 0.6963978449473218, 'val_acc': 0.594887468741317, 'test acc': 0.58769615331204, 'lr': 0.001}
+Epoch 11 finished: total_loss=12754.646958, total_correct=19591
+[CKPT] saved best at epoch 11 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=15_seed=2017.pt
+{'epoch': 11, 'train_loss': 0.5064583449154676, 'train_acc': 0.7779145489199492, 'val_loss': 0.5048870998050445, 'val_acc': 0.7957766046123923, 'test acc': 0.7973892514928482, 'lr': 0.001}
+Epoch 12 finished: total_loss=12595.813397, total_correct=19690
+{'epoch': 12, 'train_loss': 0.500151421434543, 'train_acc': 0.7818456162642948, 'val_loss': 0.5100614083017383, 'val_acc': 0.7543762156154488, 'test acc': 0.7621163727260103, 'lr': 0.001}
+Epoch 13 finished: total_loss=12487.903283, total_correct=19725
+{'epoch': 13, 'train_loss': 0.4958665534910738, 'train_acc': 0.7832353875476493, 'val_loss': 0.4991847800950552, 'val_acc': 0.7902195054181718, 'test acc': 0.8028051659491737, 'lr': 0.001}
+Epoch 14 finished: total_loss=12644.573174, total_correct=19609
+{'epoch': 14, 'train_loss': 0.5020875625189256, 'train_acc': 0.7786292884371029, 'val_loss': 0.5052993602907866, 'val_acc': 0.7677132536815782, 'test acc': 0.7701708096097765, 'lr': 0.001}
+Epoch 15 finished: total_loss=12734.543289, total_correct=19544
+{'epoch': 15, 'train_loss': 0.5056600734269604, 'train_acc': 0.7760482846251588, 'val_loss': 0.5140941071210967, 'val_acc': 0.7174215059738817, 'test acc': 0.7185113178725177, 'lr': 0.001}
+Epoch 16 finished: total_loss=12914.634748, total_correct=19740
+[CKPT] saved best at epoch 16 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=15_seed=2017.pt
+{'epoch': 16, 'train_loss': 0.5128111002027156, 'train_acc': 0.783831003811944, 'val_loss': 0.4970225045195087, 'val_acc': 0.801333703806613, 'test acc': 0.7986390779058464, 'lr': 0.001}
+Epoch 17 finished: total_loss=12763.616800, total_correct=19815
+{'epoch': 17, 'train_loss': 0.5068145171470533, 'train_acc': 0.7868090851334181, 'val_loss': 0.5117646142505016, 'val_acc': 0.7632675743262017, 'test acc': 0.7622552423274546, 'lr': 0.001}
+Epoch 18 finished: total_loss=12620.005815, total_correct=19822
+{'epoch': 18, 'train_loss': 0.5011120479094785, 'train_acc': 0.787087039390089, 'val_loss': 0.5026614366533458, 'val_acc': 0.7949430397332592, 'test acc': 0.8000277739202889, 'lr': 0.001}
+Epoch 19 finished: total_loss=12646.618469, total_correct=19952
+{'epoch': 19, 'train_loss': 0.502168776573947, 'train_acc': 0.7922490470139771, 'val_loss': 0.5113286502156267, 'val_acc': 0.7465962767435399, 'test acc': 0.7469795861685877, 'lr': 0.001}
+Epoch 20 finished: total_loss=12946.318800, total_correct=19549
+{'epoch': 20, 'train_loss': 0.5140692026672703, 'train_acc': 0.7762468233799238, 'val_loss': 0.4991894735043564, 'val_acc': 0.7632675743262017, 'test acc': 0.7629495903346757, 'lr': 0.001}
+Epoch 21 finished: total_loss=12981.084105, total_correct=19684
+[CKPT] saved best at epoch 21 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=15_seed=2017.pt
+{'epoch': 21, 'train_loss': 0.5154496547606273, 'train_acc': 0.7816073697585769, 'val_loss': 0.5370526954088651, 'val_acc': 0.8068908030008336, 'test acc': 0.8126649076517151, 'lr': 0.001}
+Epoch 22 finished: total_loss=13068.212499, total_correct=19753
+[LR] 0.001 -> 0.0001
+{'epoch': 22, 'train_loss': 0.5189093272976832, 'train_acc': 0.7843472045743329, 'val_loss': 0.5174428803717371, 'val_acc': 0.7899416504584607, 'test acc': 0.7883627273989724, 'lr': 0.0001}
+Epoch 23 finished: total_loss=12727.275213, total_correct=20277
+{'epoch': 23, 'train_loss': 0.5053714744775086, 'train_acc': 0.8051540660736975, 'val_loss': 0.49936749436485, 'val_acc': 0.8032786885245902, 'test acc': 0.8084988196083878, 'lr': 0.0001}
+Epoch 24 finished: total_loss=12713.399501, total_correct=20304
+[CKPT] saved best at epoch 24 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=15_seed=2017.pt
+{'epoch': 24, 'train_loss': 0.5048205011454441, 'train_acc': 0.8062261753494282, 'val_loss': 0.5036304379940431, 'val_acc': 0.81133648235621, 'test acc': 0.8101652548257187, 'lr': 0.0001}
+Epoch 25 finished: total_loss=12579.437997, total_correct=20272
+{'epoch': 25, 'train_loss': 0.4995011911080177, 'train_acc': 0.8049555273189326, 'val_loss': 0.5006294939444442, 'val_acc': 0.7991108641289247, 'test acc': 0.8008609915289543, 'lr': 0.0001}
+Epoch 26 finished: total_loss=12798.907947, total_correct=20061
+{'epoch': 26, 'train_loss': 0.5082158492132548, 'train_acc': 0.7965771918678526, 'val_loss': 0.5095586151124769, 'val_acc': 0.7888302306196165, 'test acc': 0.7916955978336342, 'lr': 0.0001}
+Epoch 27 finished: total_loss=12779.048189, total_correct=19659
+{'epoch': 27, 'train_loss': 0.5074272629114996, 'train_acc': 0.7806146759847522, 'val_loss': 0.5344426404621642, 'val_acc': 0.693248124479022, 'test acc': 0.6983752256631024, 'lr': 0.0001}
+Epoch 28 finished: total_loss=12583.473259, total_correct=20132
+[LR] 0.0001 -> 1e-05
+{'epoch': 28, 'train_loss': 0.4996614222908262, 'train_acc': 0.7993964421855146, 'val_loss': 0.5108764438819275, 'val_acc': 0.8043901083634343, 'test acc': 0.8046104707679489, 'lr': 1e-05}
+Epoch 29 finished: total_loss=12411.134530, total_correct=20340
+{'epoch': 29, 'train_loss': 0.4928182389639233, 'train_acc': 0.8076556543837357, 'val_loss': 0.5041565510275364, 'val_acc': 0.7982772992497916, 'test acc': 0.80072212192751, 'lr': 1e-05}
+Epoch 30 finished: total_loss=12398.017670, total_correct=20359
+{'epoch': 30, 'train_loss': 0.4922973979382836, 'train_acc': 0.8084101016518425, 'val_loss': 0.49772244980017916, 'val_acc': 0.8032786885245902, 'test acc': 0.8047493403693932, 'lr': 1e-05}
+Epoch 31 finished: total_loss=12481.437088, total_correct=20382
+{'epoch': 31, 'train_loss': 0.4956097954261712, 'train_acc': 0.8093233799237611, 'val_loss': 0.5035974761452003, 'val_acc': 0.7974437343706585, 'test acc': 0.8032217747535064, 'lr': 1e-05}
+Epoch 32 finished: total_loss=12535.267374, total_correct=20396
+{'epoch': 32, 'train_loss': 0.49774727501741967, 'train_acc': 0.8098792884371029, 'val_loss': 0.49905221346816475, 'val_acc': 0.8024451236454571, 'test acc': 0.8043327315650604, 'lr': 1e-05}
+Epoch 33 finished: total_loss=12503.115913, total_correct=20248
+[CKPT] saved best at epoch 33 -> weights3/chckpts/best_ofdm_arch=threshold_connected_k=8_m=6_nb=15_seed=2017.pt
+{'epoch': 33, 'train_loss': 0.4964706128252507, 'train_acc': 0.804002541296061, 'val_loss': 0.5004008643310512, 'val_acc': 0.8124479021950541, 'test acc': 0.8091931676156089, 'lr': 1e-05}
+Epoch 34 finished: total_loss=12470.430057, total_correct=20355
+{'epoch': 34, 'train_loss': 0.4951727309629908, 'train_acc': 0.8082512706480305, 'val_loss': 0.4964626458874342, 'val_acc': 0.7982772992497916, 'test acc': 0.7996111651159561, 'lr': 1e-05}
+Epoch 35 finished: total_loss=12525.482741, total_correct=20293
+{'epoch': 35, 'train_loss': 0.49735874925968454, 'train_acc': 0.8057893900889453, 'val_loss': 0.5265060696511773, 'val_acc': 0.7943873298138372, 'test acc': 0.7962782946812943, 'lr': 1e-05}
+Epoch 36 finished: total_loss=12574.344822, total_correct=20318
+{'epoch': 36, 'train_loss': 0.4992989525861631, 'train_acc': 0.8067820838627701, 'val_loss': 0.5119424842486417, 'val_acc': 0.8057793831619895, 'test acc': 0.8101652548257187, 'lr': 1e-05}
+Epoch 37 finished: total_loss=12538.360990, total_correct=20245
+{'epoch': 37, 'train_loss': 0.4978701155325055, 'train_acc': 0.8038834180432021, 'val_loss': 0.504087602787463, 'val_acc': 0.7813281467074187, 'test acc': 0.7860019441744203, 'lr': 1e-05}
+Epoch 38 finished: total_loss=12594.889285, total_correct=20249
+{'epoch': 38, 'train_loss': 0.50011472701269, 'train_acc': 0.8040422490470139, 'val_loss': 0.49973814578214, 'val_acc': 0.8046679633231453, 'test acc': 0.8096097764199417, 'lr': 1e-05}
+Epoch 39 finished: total_loss=12581.013968, total_correct=20247
+{'epoch': 39, 'train_loss': 0.49956376939595426, 'train_acc': 0.803962833545108, 'val_loss': 0.5088372410552705, 'val_acc': 0.8030008335648792, 'test acc': 0.8059991667823914, 'lr': 1e-05}
+Epoch 40 finished: total_loss=12520.449445, total_correct=20166
+[LR] 1e-05 -> 1e-06
+{'epoch': 40, 'train_loss': 0.49715888837241157, 'train_acc': 0.8007465057179162, 'val_loss': 0.5093758746662813, 'val_acc': 0.8024451236454571, 'test acc': 0.8068323843910568, 'lr': 1.0000000000000002e-06}
+Epoch 41 finished: total_loss=12453.512131, total_correct=20347
+{'epoch': 41, 'train_loss': 0.4945009581773072, 'train_acc': 0.8079336086404066, 'val_loss': 0.5054618832666896, 'val_acc': 0.801055848846902, 'test acc': 0.802944035550618, 'lr': 1.0000000000000002e-06}
+Epoch 42 finished: total_loss=12470.516594, total_correct=20254
+{'epoch': 42, 'train_loss': 0.49517616716697527, 'train_acc': 0.8042407878017789, 'val_loss': 0.5100913599617913, 'val_acc': 0.7829952764656849, 'test acc': 0.7829468129426469, 'lr': 1.0000000000000002e-06}
+Epoch 43 finished: total_loss=12556.789067, total_correct=20080
+{'epoch': 43, 'train_loss': 0.49860185305227017, 'train_acc': 0.7973316391359594, 'val_loss': 0.5240159989827605, 'val_acc': 0.71158655181995, 'test acc': 0.7174003610609637, 'lr': 1.0000000000000002e-06}
+Epoch 44 finished: total_loss=12515.402478, total_correct=20190
+{'epoch': 44, 'train_loss': 0.4969584846814675, 'train_acc': 0.8016994917407878, 'val_loss': 0.5147348922568913, 'val_acc': 0.747429841622673, 'test acc': 0.7462852381613665, 'lr': 1.0000000000000002e-06}
+Epoch 45 finished: total_loss=12495.836340, total_correct=20168
+{'epoch': 45, 'train_loss': 0.4961815573360293, 'train_acc': 0.8008259212198221, 'val_loss': 0.4986759573593839, 'val_acc': 0.7960544595721034, 'test acc': 0.802944035550618, 'lr': 1.0000000000000002e-06}
+Epoch 46 finished: total_loss=12522.249069, total_correct=20157
+{'epoch': 46, 'train_loss': 0.49723034741160527, 'train_acc': 0.8003891359593392, 'val_loss': 0.49738241142947065, 'val_acc': 0.8021672686857461, 'test acc': 0.8066935147896126, 'lr': 1.0000000000000002e-06}
+Epoch 47 finished: total_loss=12479.946498, total_correct=20130
+{'epoch': 47, 'train_loss': 0.4955506074458853, 'train_acc': 0.7993170266836086, 'val_loss': 0.501922361765944, 'val_acc': 0.7868852459016393, 'test acc': 0.7847521177614221, 'lr': 1.0000000000000002e-06}
+Epoch 48 finished: total_loss=12542.361889, total_correct=20118
+{'epoch': 48, 'train_loss': 0.4980289822460887, 'train_acc': 0.7988405336721728, 'val_loss': 0.4975262237161555, 'val_acc': 0.8030008335648792, 'test acc': 0.8032217747535064, 'lr': 1.0000000000000002e-06}
+Epoch 49 finished: total_loss=12615.639516, total_correct=20081

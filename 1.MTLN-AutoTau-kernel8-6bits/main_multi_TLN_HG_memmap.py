@@ -42,6 +42,9 @@ import argparse
 import random
 import subprocess
 import time
+import os
+
+from huggingface_hub import snapshot_download
 
 import numpy as np
 from sympy import stats
@@ -173,29 +176,41 @@ def print_memory():
     mem = process.memory_info().rss / (1024 ** 3)
     print(f"Memory Usage: {mem:.2f} GB")
 
-def _find_data3_root():
-    script_dir = os.path.dirname(__file__)
-    candidates = [
-        os.path.join(script_dir, '..', 'data3'),
-        os.path.join(script_dir, '..', '..', 'data3'),
-        os.path.join(os.getcwd(), 'data3'),
-        os.path.join(os.getcwd(), '..', 'data3'),
-    ]
+class OFDMDataset(torch.utils.data.Dataset):
+    def __init__(self, filepaths, labels, thermometer, num_bits):
+        self.filepaths = filepaths
+        self.labels = labels
+        self.thermometer = thermometer
+        self.num_bits = num_bits
+        self.expected_channels = 2 * num_bits
 
-    checked = []
-    for candidate in candidates:
-        data_root = os.path.abspath(candidate)
-        if data_root in checked:
-            continue
-        checked.append(data_root)
-        if os.path.isdir(os.path.join(data_root, '15dB')):
-            return data_root
+    def __len__(self):
+        return len(self.filepaths)
 
-    raise RuntimeError(
-        "Could not find OFDM data3/15dB directory. Checked: "
-        + ", ".join(checked)
-    )
-
+    def __getitem__(self, idx):
+        # Load single .npy file
+        x = np.load(self.filepaths[idx])
+        x_torch = torch.from_numpy(x).float().unsqueeze(0) # [1, 2, 256, 339]
+        
+        # Binarize on the fly
+        with torch.no_grad():
+            bits = self.thermometer.binarize(x_torch, verbose=False) # [1, 2, 256, 339, num_bits]
+        
+        # Reshape to expected format: [2*num_bits, 256, 339]
+        # Equivalent to how it was done in the original script
+        bits = bits.permute(0, 1, 4, 2, 3).reshape(self.expected_channels, 256, 339)
+        
+        # Split into branches (list of tensors)
+        branches = []
+        for bit_idx in range(self.num_bits):
+            # real part bit_idx, imag part bit_idx + num_bits
+            branches.append(torch.stack([
+                bits[bit_idx],
+                bits[bit_idx + self.num_bits]
+            ], dim=0))
+        
+        label = torch.tensor(self.labels[idx], dtype=torch.long)
+        return (*branches, label)
 
 def load_dataset(args):
     num_bits = args.num_bits
@@ -206,217 +221,91 @@ def load_dataset(args):
         raise NotImplementedError(f'The data set {args.dataset} is not supported! Please use ofdm.')
 
     class_names = ['BPSK', 'QPSK', 'QAM16', 'QAM64', 'QAM256', 'QAM1024']
-    data3_root = _find_data3_root()
-    npy_dir = os.path.join(data3_root, '15dB')
-
-    requested_cache_dir = os.path.abspath(args.preprocessed_cache_dir)
-    # If the user didn't override the default, we might want to point it to data3/preprocessed
-    # But let's stay consistent with the provided arguments and cache logic.
     
-    num_bits = args.num_bits
-    expected_channels = 2 * num_bits
-    feature_wise = True
+    # Path to wireless data directory
+    npy_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'wireless_data', '15dB'))
+
+    # Check if data exists, if not, attempt to download it automatically.
+    if not os.path.isdir(npy_dir) or not all(os.path.isdir(os.path.join(npy_dir, c)) for c in class_names):
+        print(f"Data not found at {npy_dir}. Attempting to download from Hugging Face...")
+        hf_token = args.hf_token if args.hf_token else os.getenv('HF_TOKEN')
+        try:
+            snapshot_download(
+                repo_id='Sam10Man/Wireless',
+                repo_type="dataset",
+                local_dir=npy_dir,
+                token=hf_token
+            )
+        except Exception as e:
+             raise RuntimeError(f"Could not find or download data at {npy_dir}. Error: {e}")
+
     train_ratio = 0.7
     val_ratio = 0.1
 
-    cache_config = {
-        'dataset': args.dataset,
-        'source_dir': npy_dir,
-        'class_names': class_names,
-        'train_ratio': train_ratio,
-        'split_seed': args.seed,
-        'thermometer_type': 'DistributiveThermometer',
-        'num_bits': num_bits,
-        'feature_wise': feature_wise,
-    }
-    cache_key = (
-        f"{args.dataset}_distributive_{num_bits}bit_"
-        f"featurewise_{int(feature_wise)}_seed_{args.seed}"
-    )
-    cache_dir = os.path.join(args.preprocessed_cache_dir, cache_key)
-    train_cache_path = os.path.join(cache_dir, 'train.pt')
-    val_cache_path = os.path.join(cache_dir, 'val.pt')
-    meta_cache_path = os.path.join(cache_dir, 'meta.pt')
-    test_cache_path = os.path.join(cache_dir, 'test.pt')
+    print("Identifying OFDM dataset files...")
+    train_files, train_labels = [], []
+    val_files, val_labels = [], []
+    test_files, test_labels = [], []
+    rng = np.random.RandomState(args.seed)
+    
+    subset_for_fitting = []
 
-    if all(os.path.exists(path) for path in (train_cache_path, val_cache_path, meta_cache_path, test_cache_path)):
-        print(f"Loading cached binarized OFDM data from {cache_dir}")
-        train_cache = torch.load(train_cache_path, map_location='cpu')
-        val_cache = torch.load(val_cache_path, map_location='cpu')
-        test_cache = torch.load(test_cache_path, map_location='cpu')
-        meta_cache = torch.load(meta_cache_path, map_location='cpu')
-
-        # config check
-        cached_config = meta_cache.get('cache_config', {})
-        if cached_config.get('num_bits') != num_bits:
-             raise RuntimeError(f"Cache mismatch. Requested {num_bits} bits, found {cached_config.get('num_bits')}")
-
-        x_train_bin, y_train = train_cache['x'], train_cache['y']
-        x_val_bin, y_val = val_cache['x'], val_cache['y']
-        x_test_bin, y_test = test_cache['x'], test_cache['y']
-    else:
-        print("Loading OFDM datasets into memory for binarization...")
-        train_files, train_labels = [], []
-        val_files, val_labels = [], []
-        test_files, test_labels = [], []
-        rng = np.random.RandomState(args.seed)
+    for class_idx, class_name in enumerate(class_names):
+        class_path = os.path.join(npy_dir, class_name)
+        files = sorted([os.path.join(class_path, f) for f in os.listdir(class_path) if f.endswith('.npy')])
+        n_total = len(files)
+        n_train = int(n_total * train_ratio)
+        n_val = int(n_total * val_ratio)
         
-        for class_idx, class_name in enumerate(class_names):
-            class_path = os.path.join(npy_dir, class_name)
-            files = sorted([os.path.join(class_path, f) for f in os.listdir(class_path) if f.endswith('.npy')])
-            n_total = len(files)
-            n_train = int(n_total * train_ratio)
-            n_val = int(n_total * val_ratio)
-            n_test = n_total - n_train - n_val
-            
-            indices = np.arange(n_total)
-            rng.shuffle(indices)
-            files = [files[i] for i in indices]
-            
-            train_files.extend(files[:n_train])
-            train_labels.extend([class_idx] * n_train)
-            val_files.extend(files[n_train:n_train+n_val])
-            val_labels.extend([class_idx] * n_val)
-            test_files.extend(files[n_train+n_val:])
-            test_labels.extend([class_idx] * n_test)
-
-        def load_npy_dataset(filepaths, labels):
-            print(f"Loading {len(filepaths)} files...")
-            print_memory()
-            # Pre-allocate tensor to avoid multiple copies
-            sample = np.load(filepaths[0])
-            data = torch.empty((len(filepaths), *sample.shape), dtype=torch.float32)
-            for i, f in enumerate(filepaths):
-                try:
-                    data[i] = torch.from_numpy(np.load(f))
-                except Exception as e:
-                    print(f"Error loading file {f} at index {i}: {e}")
-                    raise e
-                if i % 1000 == 0:
-                    print(f"Loaded {i}/{len(filepaths)}...")
-            
-            labels = torch.tensor(labels, dtype=torch.long)
-            print_memory()
-            return data, labels
-
-        x_train, y_train = load_npy_dataset(train_files, train_labels)
-        x_val, y_val = load_npy_dataset(val_files, val_labels)
-        x_test, y_test = load_npy_dataset(test_files, test_labels)
-
-        print(f"Loaded train data: {x_train.shape}, val data: {x_val.shape}, test data: {x_test.shape}")
+        indices = np.arange(n_total)
+        rng.shuffle(indices)
+        files = [files[i] for i in indices]
         
-        print(f"Fitting {num_bits}-bit distributive thermometer on train data...")
-        thermometer = bin.DistributiveThermometer(
-            num_bits=num_bits,
-            feature_wise=feature_wise
-        ).fit(x_train)
+        class_train = files[:n_train]
+        train_files.extend(class_train)
+        train_labels.extend([class_idx] * n_train)
+        val_files.extend(files[n_train:n_train+n_val])
+        val_labels.extend([class_idx] * n_val)
+        test_files.extend(files[n_train+n_val:])
+        test_labels.extend([class_idx] * (n_total - n_train - n_val))
 
-        print("Binarizing train data...")
-        # Process in chunks to avoid large intermediate tensors
-        train_size = x_train.shape[0]
-        x_train_bin = torch.empty((train_size, expected_channels, 256, 339), dtype=torch.bool)
-        chunk_size_bin = 1000
-        for i in range(0, train_size, chunk_size_bin):
-            end = min(i + chunk_size_bin, train_size)
-            bits = thermometer.binarize(x_train[i:end])
-            x_train_bin[i:end] = bits.permute(0, 1, 4, 2, 3).reshape(-1, expected_channels, 256, 339)
-            del bits
-        del x_train
-        
-        print("Binarizing val data...")
-        val_size = x_val.shape[0]
-        x_val_bin = torch.empty((val_size, expected_channels, 256, 339), dtype=torch.bool)
-        for i in range(0, val_size, chunk_size_bin):
-            end = min(i + chunk_size_bin, val_size)
-            bits = thermometer.binarize(x_val[i:end])
-            x_val_bin[i:end] = bits.permute(0, 1, 4, 2, 3).reshape(-1, expected_channels, 256, 339)
-            del bits
-        del x_val
-        
-        print("Binarizing test data...")
-        test_size = x_test.shape[0]
-        x_test_bin = torch.empty((test_size, expected_channels, 256, 339), dtype=torch.bool)
-        for i in range(0, test_size, chunk_size_bin):
-            end = min(i + chunk_size_bin, test_size)
-            bits = thermometer.binarize(x_test[i:end])
-            x_test_bin[i:end] = bits.permute(0, 1, 4, 2, 3).reshape(-1, expected_channels, 256, 339)
-            del bits
-        del x_test
-        
-        print_memory()
+        # Take 100 samples per class to fit the thermometer (total 600 samples)
+        # This is enough to get a good distribution without using all RAM.
+        subset_indices = rng.choice(len(class_train), min(100, len(class_train)), replace=False)
+        for idx in subset_indices:
+            subset_for_fitting.append(np.load(class_train[idx]))
 
-        os.makedirs(cache_dir, exist_ok=True)
-        torch.save({'x': x_train_bin, 'y': y_train}, train_cache_path)
-        torch.save({'x': x_val_bin, 'y': y_val}, val_cache_path)
-        torch.save({'x': x_test_bin, 'y': y_test}, test_cache_path)
-        torch.save({'cache_config': cache_config}, meta_cache_path)
-        print(f"Saved binarized OFDM cache to {cache_dir}")
+    print(f"Total samples: train={len(train_files)}, val={len(val_files)}, test={len(test_files)}")
+    
+    print(f"Fitting {num_bits}-bit distributive thermometer on subset (600 samples)...")
+    subset_tensor = torch.from_numpy(np.array(subset_for_fitting)).float()
+    thermometer = bin.DistributiveThermometer(
+        num_bits=num_bits,
+        feature_wise=feature_wise
+    ).fit(subset_tensor)
+    del subset_for_fitting
+    del subset_tensor
+    
+    print("Initializing On-The-Fly Binarization Datasets...")
+    train_dataset = OFDMDataset(train_files, train_labels, thermometer, num_bits)
+    val_dataset = OFDMDataset(val_files, val_labels, thermometer, num_bits)
+    test_dataset = OFDMDataset(test_files, test_labels, thermometer, num_bits)
 
-    # =========================================================
-    # Split num_bits branches
-    # =========================================================
-    train_branches = []
-    val_branches = []
-    test_branches = []
+    # Use more workers to hide binarization overhead
+    num_workers = 4 
 
-    print("Splitting bit branches and freeing full binarized tensors...")
-    for bit_idx in range(num_bits):
-        # -------------------------
-        # TRAIN (Stacking returns a new tensor, slicing doesn't copy data until stacked)
-        # -------------------------
-        train_branches.append(torch.stack([
-            x_train_bin[:, bit_idx],
-            x_train_bin[:, bit_idx + num_bits]
-        ], dim=1))
-
-        # -------------------------
-        # VALIDATION
-        # -------------------------
-        val_branches.append(torch.stack([
-            x_val_bin[:, bit_idx],
-            x_val_bin[:, bit_idx + num_bits]
-        ], dim=1))
-
-        # -------------------------
-        # TEST
-        # -------------------------
-        test_branches.append(torch.stack([
-            x_test_bin[:, bit_idx],
-            x_test_bin[:, bit_idx + num_bits]
-        ], dim=1))
-
-    # Free the large combined tensors as they are no longer needed
-    del x_train_bin, x_val_bin, x_test_bin
-    print_memory()
-
-    # =========================================================
-    # Debug prints
-    # =========================================================
-    print("Number of branches:", len(train_branches))
-    for i in range(num_bits):
-        print(f"Branch {i} shape:", train_branches[i].shape)
-
-    # =========================================================
-    # Datasets
-    # =========================================================
-    train_dataset = torch.utils.data.TensorDataset(*train_branches, y_train)
-    val_dataset = torch.utils.data.TensorDataset(*val_branches, y_val)
-    test_dataset = torch.utils.data.TensorDataset(*test_branches, y_test)
-
-    # =========================================================
-    # DataLoaders
-    # =========================================================
+    print(f"Creating DataLoaders with {num_workers} workers...")
     map_train_loader = torch.utils.data.DataLoader(
         train_dataset, batch_size=args.batch_size, shuffle=True,
-        pin_memory=False, drop_last=True, num_workers=0
+        pin_memory=(device == 'cuda'), drop_last=True, num_workers=num_workers
     )
     map_val_loader = torch.utils.data.DataLoader(
         val_dataset, batch_size=args.batch_size, shuffle=False,
-        pin_memory=False, drop_last=False, num_workers=0
+        pin_memory=(device == 'cuda'), drop_last=False, num_workers=num_workers
     )
     map_test_loader = torch.utils.data.DataLoader(
         test_dataset, batch_size=args.batch_size, shuffle=False,
-        pin_memory=False, drop_last=False, num_workers=0
+        pin_memory=(device == 'cuda'), drop_last=False, num_workers=num_workers
     )
 
     return map_train_loader, map_val_loader, map_test_loader
@@ -588,7 +477,7 @@ def get_model(args, sample_loader):
 
                 return x
 
-            sample_batch = next(iter(map_train_loader))
+            sample_batch = next(iter(sample_loader))
             *sample_branches, _ = sample_batch
             sample_branches = [b[:1].to(device) for b in sample_branches]
 
@@ -967,14 +856,12 @@ if __name__ == '__main__':
         action='store_true',
         help='after training, run checkpoint export -> csv -> truth table -> minimized expressions -> verilog on the best checkpoint',
     )
-    parser.add_argument(
-        '--preprocessed-cache-dir',
+    parser.add_argument('--preprocessed-cache-dir',
         type=str,
         default=os.path.join(os.path.dirname(__file__), './../'),
         help='directory used to store and reuse cached binarized datasets',
     )
     parser.add_argument('--hf_token', type=str, default=None, help='Hugging Face API token')
-
 
     args = parser.parse_args()
     if args.num_bits < 1:
@@ -994,6 +881,9 @@ if __name__ == '__main__':
         f"-k {args.num_kernels} "
         f"-t {args.tau}"
     )
+    if args.hf_token:
+        command_str += f" --hf_token { " " } "
+    
     print("\nCommand used to run this script:")
     print(command_str)
 
